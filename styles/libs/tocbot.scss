@@ -2,59 +2,49 @@
 
 .toc {
   position: relative;
-  margin: 120px 0 120px;
-
-  @include sp {
-    margin: 80px 0;
-  }
 
   .toc-card {
     position: relative;
-    background-color: rgba(var(--rgb-white), 0.8);
-    padding: 40px 32px;
+    background-color: var(--color-white);
+    border: 1px solid rgba(var(--rgb-border), 0.8);
+    padding: 24px 16px;
     margin: 0 auto;
     font-weight: 500;
 
-    @include sp {
-      padding: 32px 16px;
-    }
+    // &::before {
+    //   content: "";
+    //   width: 100%;
+    //   height: 2px;
+    //   background-color: var(--color-main-dark-02);
+    //   position: absolute;
+    //   top: 0;
+    //   left: 0;
+    // }
 
-    &::before {
-      content: "";
-      width: 100%;
-      height: 2px;
-      background-color: var(--color-main-dark-02);
-      position: absolute;
-      top: 0;
-      left: 0;
-    }
-
-    &::after {
-      content: "";
-      width: 100%;
-      height: 2px;
-      background-color: var(--color-main-dark-02);
-      position: absolute;
-      bottom: 0;
-      left: 0;
-    }
+    // &::after {
+    //   content: "";
+    //   width: 100%;
+    //   height: 2px;
+    //   background-color: var(--color-main-dark-02);
+    //   position: absolute;
+    //   bottom: 0;
+    //   left: 0;
+    // }
   }
 
   .toc-icon {
-    width: 48px;
-    height: 48px;
     border-radius: 50%;
-    color: var(--color-white);
-    font-size: 20px;
-    background-color: var(--color-main-dark-01);
+    color: var(--color-main-dark-01);
+    font-size: 24px;
     display: flex;
     align-items: center;
     justify-content: center;
-    position: absolute;
-    top: -24px;
-    left: 0;
-    right: 0;
-    margin: 0 auto;
+    margin-right: 8px;
+    // position: absolute;
+    // top: -24px;
+    // left: 0;
+    // right: 0;
+    // margin: 0 auto;
   }
 
   .toc-head {
@@ -62,10 +52,13 @@
     font-weight: 500;
     color: var(--color-main-dark-02);
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
-    font-size: rem(18);
-    margin-top: 8px;
+
+    span {
+      font-size: rem(18);
+      letter-spacing: 0.02em;
+    }
   }
 
   .toc-content {
@@ -75,22 +68,14 @@
   }
 
   .toc-list {
-    margin-top: 24px;
-
-    @include sp {
-      margin-top: 16px;
-    }
+    margin-top: 16px;
 
     &.is-collapsible {
       border-left: none;
       margin-top: 0;
 
       a {
-        padding-left: 1.5em;
-
-        @include sp {
-          padding-left: 1em;
-        }
+        padding-left: 1.25em;
       }
     }
   }
@@ -101,23 +86,22 @@
 
   .toc-link {
     display: flex;
-    color: var(--color-main-dark-02);
+    color: rgba(var(--rgb-main-dark-02), 0.8);
     background-image: none;
     padding: 8px 4px;
+    padding: 4px;
     line-height: 1.5;
 
     &.node-name--H2 {
-      font-size: rem(18);
+      font-size: rem(15);
     }
 
     &.node-name--H3 {
-      font-size: rem(16);
+      font-size: rem(15);
+    }
 
-      &::before {
-        content: "-";
-        margin-right: 4px;
-        color: rgba(var(--rgb-main-dark-02), 0.6);
-      }
+    &.is-active-link {
+      color: var(--color-main);
     }
 
     &:hover {

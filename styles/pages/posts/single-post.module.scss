@@ -1,12 +1,36 @@
 @import "@sass-utils";
 
+.container {
+  max-width: 1300px;
+
+  @include pc {
+    max-width: 1100px;
+  }
+}
+
+.content {
+  position: relative;
+  display: flex;
+  width: 100%;
+  padding-bottom: 120px;
+
+  @include tab {
+    padding-bottom: 0;
+  }
+}
+
 .main {
   position: relative;
-  max-width: 1100px;
-  width: 100%;
-  margin: 80px auto;
+  max-width: 1000px;
+  width: 75%;
+  margin: 40px auto 0 0;
   background-color: var(--color-white);
   border: 1px solid rgba(var(--rgb-border), 0.8);
+
+  @include pc {
+    max-width: 100%;
+    width: 100%;
+  }
 
   @include tab {
     margin: 32px auto 72px;
@@ -14,14 +38,10 @@
 }
 
 .article {
-  max-width: 720px;
+  max-width: 800px;
   width: 100%;
   margin: 0 auto;
-  padding: 100px 0;
-
-  @include tab {
-    padding: 80px 0;
-  }
+  padding: 80px 0;
 
   @include sp {
     padding: 40px 0;
@@ -110,5 +130,22 @@
 
   div {
     height: rem(140);
+  }
+}
+
+.sidebar {
+  position: sticky;
+  top: 120px;
+  display: block;
+  width: 25%;
+  max-height: 100vh;
+  flex-grow: 1;
+  overflow: auto;
+  height: 100%;
+  padding-bottom: 72px;
+  margin-left: 32px;
+
+  @include pc {
+    display: none;
   }
 }

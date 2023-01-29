@@ -7,9 +7,10 @@ import s from "@/styles/pages/posts/single-post.module.scss";
 import { useLiveReload } from "next-contentlayer/hooks";
 import { NextSeo } from "next-seo";
 import { siteTitle } from "@/utils/seo";
+import Toc from "../../components/blog/toc";
 
 const PostLayout = ({ post }) => {
-  useLiveReload();
+  // useLiveReload();
 
   const { image, title, excerpt } = post;
 
@@ -32,27 +33,32 @@ const PostLayout = ({ post }) => {
         }}
       />
       <Layout>
-        <Container>
-          <main className={s.main}>
-            <Container>
-              <article className={s.article}>
-                <SingleHead post={post} />
+        <Container additionalClass={s.container}>
+          <div className={s.content}>
+            <main className={s.main}>
+              <Container>
+                <article className={s.article}>
+                  <SingleHead post={post} />
 
-                <div className={`user-content ${s.user_content}`}>
-                  {/* <MDXContent components={mdxComponents} /> */}
-                  <MDXComponents code={post.body.code} />
-                </div>
-
-                <div className={s.comment}>
-                  <p className={s.comment_head}>0 Comment</p>
-                  <div className={s.comment_box}>
-                    <p>Comment section</p>
-                    <div></div>
+                  <div className={`user-content ${s.user_content}`}>
+                    {/* <MDXContent components={mdxComponents} /> */}
+                    <MDXComponents code={post.body.code} />
                   </div>
-                </div>
-              </article>
-            </Container>
-          </main>
+
+                  <div className={s.comment}>
+                    <p className={s.comment_head}>0 Comment</p>
+                    <div className={s.comment_box}>
+                      <p>Comment section</p>
+                      <div></div>
+                    </div>
+                  </div>
+                </article>
+              </Container>
+            </main>
+            <aside className={s.sidebar}>
+              <Toc />
+            </aside>
+          </div>
         </Container>
       </Layout>
     </>

@@ -4,8 +4,15 @@
 
 // breakpoints
 
+$bp-pc: 1280px; // for toggling toc
 $bp-tab: 992px;
 $bp-sp: 650px;
+
+@mixin pc {
+  @media (max-width: ($bp-pc)) {
+    @content;
+  }
+}
 
 @mixin tab {
   @media (max-width: ($bp-tab)) {

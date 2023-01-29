@@ -26,7 +26,14 @@ In this article, I'm gonna briefly explain how I built this MDX blog with Next.j
   an another article for that topic.
 </Box>
 
-<Toc />
+<CodeHead lang="jsx" />
+
+```jsx
+
+import 'content' from 'contentlayer/generated/this/is/the/test/for/the/testing/if/thedirectory/is/too/lonmg/and/generated/generated/generated';
+
+
+```
 
 ## Tech Stack
 
@@ -71,26 +78,6 @@ By using this, you can safely manage your contents with type-safe JSON.
 I have tried to build a MDX blog by following a tutorial in Next.js docs, but it was so complicated and I had to write so many code just to get articles data.
 
 In Contentlayer, you can get the data by writing a single code, and you can do whatever you want with it.
-
-<CodeHead lang="jsx" name="/pages/index.js" />
-
-```jsx showLineNumbers
-// import package
-import { allPosts } from "contentlayer/generated/generated/generatedcontentlayer/generated/generated/generatedcontentlayer/generated/generated/generatedcontentlayer/generated/generated/generated";
-
-const posts = allPosts;
-
-allPosts.map((post) => {
-  const { id, name, title } = post;
-
-  return (
-    <div key={id}>
-      <p>{name}</p>
-      <p>{title}</p>
-    </div>
-  );
-});
-```
 
 I'm not gonna go over how to get articles without Contentlayer, but this is so much easier than the one in Next.js tutorial.
 

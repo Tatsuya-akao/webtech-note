@@ -2,6 +2,7 @@
 
 .layout {
   min-height: 100vh;
+  width: 100%;
   padding-top: 80px; // same as header height
   display: flex;
   flex-direction: column;
@@ -14,6 +15,7 @@
 .motion {
   display: flex;
   flex-grow: 1;
+  width: 100%;
 }
 
 .main {

@@ -8,8 +8,10 @@ export default function Toc() {
       tocSelector: ".toc-content",
       contentSelector: ".user-content",
       headingSelector: "h2, h3",
+      headingsOffset: 100,
       scrollSmoothOffset: -100,
       scrollSmoothDuration: 200,
+      hasInnerContainers: true,
     });
 
     return () => tocbot.destroy();
@@ -18,10 +20,12 @@ export default function Toc() {
   return (
     <div className="toc">
       <div className="toc-card">
-        <div className="toc-icon">
-          <MdOutlineToc />
+        <div className="toc-head">
+          <div className="toc-icon">
+            <MdOutlineToc />
+          </div>
+          <span>Table of Contents</span>
         </div>
-        <p className="toc-head">- Table of Contents -</p>
         <div className="toc-content"></div>
       </div>
     </div>
