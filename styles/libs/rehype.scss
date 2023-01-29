@@ -1,0 +1,61 @@
+@import "@sass-utils";
+
+div[data-rehype-pretty-code-fragment] {
+  position: relative;
+  width: 100%;
+  display: block;
+  overflow: hidden;
+  background-color: var(--color-editor-bg);
+  border-radius: 0 0 8px 8px;
+  margin-bottom: rem(32);
+}
+
+div[data-rehype-pretty-code-fragment] .line {
+  /* stylistic preferences */
+  padding-left: 0.5rem;
+  padding-right: 0.75rem;
+  border-left-style: solid;
+  border-left-width: 4px;
+  border-left-color: transparent;
+
+  @include sp {
+    padding-left: 0;
+    font-size: rem(14);
+    -webkit-text-size-adjust: 100%;
+  }
+
+  &--highlighted {
+    border-left-color: var(--color-main);
+    background-color: rgba(var(--rgb-editor-highlight), 0.2);
+  }
+
+  // test
+  display: block;
+}
+
+div[data-rehype-pretty-code-fragment] pre code {
+  display: grid;
+  font-family: $font-editor;
+  letter-spacing: 0;
+  // to reset CSS from code tag outside of highlighter
+  margin: 0;
+  border: none;
+  background-color: transparent;
+  box-shadow: none;
+}
+
+code[data-line-numbers] {
+  counter-reset: line;
+}
+
+code[data-line-numbers] .line::before {
+  counter-increment: line;
+  content: counter(line);
+  display: inline-block;
+  text-align: right;
+
+  /* stylistic preferences */
+  margin-right: 0.75rem;
+  width: 1rem;
+  color: rgba(var(--rgb-white), 0.2);
+}

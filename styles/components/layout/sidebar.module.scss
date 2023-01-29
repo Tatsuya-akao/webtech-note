@@ -1,0 +1,132 @@
+@import "@sass-utils";
+
+.sidebar {
+  position: sticky;
+  top: 128px;
+  flex-shrink: 0;
+  flex-grow: 1;
+  flex-basis: 280px;
+  max-width: 320px;
+  max-height: 100vh;
+  overflow: auto;
+  height: 100%;
+  padding-bottom: 72px;
+  margin-left: 48px;
+
+  @include tab {
+    position: static;
+    overflow: initial;
+    width: 100%;
+    max-width: 100%;
+    margin-left: 0;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  @include sp {
+    flex-wrap: wrap;
+  }
+}
+
+.block {
+  padding: 16px 24px 24px;
+  border-radius: 10px;
+  background-color: rgba(var(--rgb-white), 0.8);
+  border: 1px solid rgba(var(--rgb-border), 0.8);
+  margin-bottom: 48px;
+
+  @include tab {
+    width: calc(50% - 16px);
+    margin-bottom: 0;
+  }
+
+  @include sp {
+    width: 100%;
+    padding: 16px;
+    margin-top: 24px;
+  }
+}
+
+.block_head {
+  display: flex;
+  align-items: center;
+  font-family: $font-os;
+  font-size: rem(16);
+  font-weight: bold;
+  letter-spacing: 0.04em;
+  color: var(--color-main-dark-02);
+  padding-bottom: 12px;
+  border-bottom: 1px solid rgba(var(--color-border), 0.8);
+
+  svg {
+    margin-right: 8px;
+  }
+}
+
+.cat_list {
+  position: relative;
+}
+
+.cat_item {
+  position: relative;
+  border-top: 1px solid rgba(var(--rgb-border), 0.8);
+
+  &:first-child {
+    border-top: none;
+  }
+
+  &:last-child {
+    border-bottom: 1px solid rgba(var(--rgb-border), 0.8);
+  }
+}
+
+.cat_link {
+  display: flex;
+  padding: 8px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  font-size: rem(15);
+  color: var(--color-main-dark-01);
+  transition: all 0.3s;
+
+  span {
+    margin-right: 4px;
+  }
+
+  &:hover {
+    background-color: rgba(var(--rgb-main-dark-01), 0.1);
+  }
+}
+
+.tag_list {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 8px;
+}
+
+.tag_item {
+  margin: 8px 8px 0 0;
+}
+
+.tag_link {
+  display: flex;
+  align-items: center;
+  letter-spacing: 0.02em;
+  font-weight: 600;
+  font-size: rem(14);
+  border: 1px solid rgba(var(--rgb-main-dark-01), 0.2);
+  padding: 2px 8px;
+  border-radius: 30px;
+  color: var(--color-main-dark-01);
+  transition: all 0.3s;
+
+  &:hover {
+    color: var(--color-white);
+    background-color: var(--color-main-dark-01);
+  }
+
+  span {
+    font-size: rem(12);
+    margin-right: 4px;
+  }
+}

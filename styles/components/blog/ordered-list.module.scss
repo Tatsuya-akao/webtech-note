@@ -1,0 +1,25 @@
+@import "@sass-utils";
+
+.list {
+  margin: rem(24) 0;
+  counter-reset: li;
+
+  li {
+    position: relative;
+    display: flex;
+
+    &::marker {
+      color: var(--color-main);
+      margin-right: 4px;
+    }
+
+    &::before {
+      counter-increment: li;
+      content: counter(li) ".";
+      padding: 0 8px 0 4px;
+      color: var(--color-main);
+      font-weight: 500;
+      font-feature-settings: "tnum";
+    }
+  }
+}

@@ -1,0 +1,39 @@
+@import "@sass-utils";
+
+.level2 {
+  font-size: rem(36);
+  line-height: 1.4;
+  padding-bottom: 0.3em;
+  border-bottom: 1px solid rgba(var(--rgb-border), 0.8);
+
+  @include sp {
+    font-size: rem(28);
+  }
+}
+
+.level3 {
+  font-size: rem(32);
+  line-height: 1.4;
+
+  @include sp {
+    font-size: rem(24);
+  }
+}
+
+.level4 {
+  font-size: rem(28);
+  line-height: 1.5;
+
+  @include sp {
+    font-size: rem(20);
+  }
+}
+
+.level5 {
+  font-size: rem(24);
+  line-height: 1.5;
+
+  @include sp {
+    font-size: rem(18);
+  }
+}

@@ -1,0 +1,21 @@
+@import "@sass-utils";
+
+.list {
+  margin: rem(24) 0;
+
+  li {
+    position: relative;
+    padding-left: 1em;
+
+    &::before {
+      content: "";
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background-color: var(--color-main);
+      position: absolute;
+      left: calc(0.5em - 4px);
+      top: calc(1.75em / 2 - 3px); // line-height = 1.75
+    }
+  }
+}

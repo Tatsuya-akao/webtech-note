@@ -1,0 +1,259 @@
+---
+title: Blog Parts
+excerpt: This page is for listing and checking all the blog parts.
+publishedAt: 2023-01-29T21:00:00
+category: Demo
+tags:
+  - Demo
+image: /images/posts/first-post.png
+isPublished: false
+isFeatured: false
+---
+
+This article is for checking all the blog parts. This is not a public post.
+
+<Toc />
+
+## Title tags
+
+I have `h2` ~ `h5` for heading tags.
+
+### This is the h3 tag
+
+This is a sample text. This is a sample text for filling the layout. This is a sample text. This is a sample text for filling the layout.This is a sample text. This is a sample text for filling the layout.This is a sample text. This is a sample text for filling the layout.This is a sample text.
+
+### This is the h3 tag for checking if the heading text is long.
+
+This is a sample text. This is a sample text for filling the layout. This is a sample text. This is a sample text for filling the layout.This is a sample text. This is a sample text for filling the layout.This is a sample text. This is a sample text for filling the layout.This is a sample text.
+
+#### This is the h4 tag
+
+This is a sample text. This is a sample text for filling the layout. This is a sample text. This is a sample text for filling the layout.This is a sample text. This is a sample text for filling the layout.This is a sample text. This is a sample text for filling the layout.This is a sample text.
+
+#### This is the h4 tag for checking if the heading text is long.
+
+This is a sample text. This is a sample text for filling the layout. This is a sample text. This is a sample text for filling the layout.This is a sample text. This is a sample text for filling the layout.This is a sample text. This is a sample text for filling the layout.This is a sample text.
+
+##### This is the h5 tag
+
+This is a sample text. This is a sample text for filling the layout. This is a sample text. This is a sample text for filling the layout.This is a sample text. This is a sample text for filling the layout.This is a sample text. This is a sample text for filling the layout.This is a sample text.
+
+##### This is the h5 tag for checking if the heading text is long enough to have multi lines.
+
+This is a sample text. This is a sample text for filling the layout. This is a sample text. This is a sample text for filling the layout.This is a sample text. This is a sample text for filling the layout.This is a sample text. This is a sample text for filling the layout.This is a sample text.
+
+## Link tags
+
+There are 3 ways how I can set link tags.
+
+### 1. The default MDX syntax
+
+The first one is the default `a` tag with MDX syntax.
+
+<CodeHead lang="mdx" />
+
+```mdx
+[Next.js](https://google.com)
+```
+
+Inside the `[]` is a text, and `()` is a URL. By using MDX syntax, you cannot add attributes like `target` or `rel`.
+
+### 2. OuterLink (Custom component)
+
+`<OuterLink />` is a custom component for generating outer links. The attribute `target="_blank"` is set by default.
+
+<CodeHead lang="jsx" />
+
+```jsx
+<OuterLink href="https://google.com">Text</OuterLink>
+```
+
+### 3. Link
+
+Finally, we have `<Link />` component for generating links to another page in the same domain.
+
+<CodeHead lang="jsx" />
+
+```jsx
+<Link href="/about">About</Link>
+```
+
+This is made by Next.js.
+
+## List tags
+
+We have `ul` and `ol` tags.
+
+### ul - Unordered list
+
+<CodeHead lang="mdx" />
+
+```mdx
+- list 01
+- list 02
+- list 03
+```
+
+When this is rendered, it looks like:
+
+- list 01
+- list 02
+- list 03
+
+### ol - Ordered list
+
+<CodeHead lang="mdx" />
+
+```mdx
+1. list 01
+2. list 02
+3. list 03
+```
+
+When this is rendered, it looks like:
+
+1. list 01
+2. list 02
+3. list 03
+
+## Blockquote
+
+You can set `blockquote` by typing `>` and then put a text after the symbol.
+
+> This is blockquote. This can be multi lines if the text is long. This is blockquote. This can be multi lines if the text is long.
+>
+> This is blockquote. This can be multi lines if the text is long.
+
+<CodeHead lang="mdx" />
+
+```mdx
+> This is a blockquote.
+```
+
+## Images
+
+I have created a custom component `<BlogImage />` and here's how it works.
+
+<CodeHead lang="mdx" />
+
+```mdx
+<BlogImage
+  src="/images/posts/first-post.png"
+  alt="sample img"
+  width={1600}
+  height={900}
+  caption="This is a sample caption for blog image component. When a string is passed to the caption prop, this gets rendered. Otherwise, this figcaption won't appear."
+/>
+```
+
+This should look like below:
+
+<BlogImage
+  src="/images/posts/first-post.png"
+  alt="sample img"
+  width={1600}
+  height={900}
+  caption="This is a sample caption for blog image component. When a string is passed to the caption prop, this gets rendered. Otherwise, this figcaption won't appear."
+/>
+
+All props must be passed except `caption`.
+
+## Syntax Highlighter
+
+We have a syntax highlighter for showing the code.
+
+You must have `<CodeHead />` component above the code block.
+
+<CodeHead lang="mdx" />
+
+```mdx
+<CodeHead lang="mdx" />
+```
+
+`<CodeHead />` is for a file name(optional) and a language.
+
+When you set `name` props, it looks like this:
+
+<CodeHead name="/posts/sample.mdx" lang="mdx" />
+
+```mdx
+<CodeHead lang="mdx" />
+```
+
+### Code block options
+
+There are several options for code block.
+
+#### showLineNumbers
+
+By adding `showLineNumbers`, you can show the numbers in the block.
+
+<CodeHead name="/posts/sample.mdx" lang="jsx" />
+
+```jsx showLineNumbers
+import margin from "@/styles/components/blog/margin.module.scss";
+import { IoLogoJavascript, IoLogoHtml5 } from "react-icons/io5";
+
+export default function CodeHead({ name, lang }) {
+  const langData = outputLanguageString(lang);
+
+  return (
+    <div className={`${s.code_head} ${margin.t_medium}`}>
+      <div className={s.text_wrap}>
+        {name && <span className={s.name}>{name}</span>}
+      </div>
+    </div>
+  );
+}
+```
+
+If you wanna start from the specific number, you can pass numbers like `showLineNumbers{5}`.
+
+<CodeHead name="/posts/sample.mdx" lang="jsx" />
+
+```jsx showLineNumbers{5}
+import margin from "@/styles/components/blog/margin.module.scss";
+import { IoLogoJavascript, IoLogoHtml5 } from "react-icons/io5";
+```
+
+#### Highlight specific line(s) of code
+
+You can highlight specific lines by passing `{1, 2}`, or `{1-5}` for multi lines. It is recommended to use this feature with `showLineNumbers`.
+
+<CodeHead name="/posts/sample.mdx" lang="jsx" />
+
+```jsx showLineNumbers {5-9}
+export default function CodeHead({ name, lang }) {
+  const langData = outputLanguageString(lang);
+
+  return (
+    <div className={`${s.code_head} ${margin.t_medium}`}>
+      <div className={s.text_wrap}>
+        {name && <span className={s.name}>{name}</span>}
+      </div>
+    </div>
+  );
+}
+```
+
+## Box
+
+We have a `Box` component to wrap up contents with colored background. For now, there are 3 types of box.
+
+- default
+- success
+- warning
+
+<Box>This is a default box.</Box>
+
+<Box type="success">This is a success box.</Box>
+
+<Box type="warning">This is a warning box.</Box>
+
+The component takes 1 prop which is `type`, and you can pass a string to it.
+
+<CodeHead name="/posts/sample.mdx" lang="mdx" />
+
+```mdx
+<Box type="success">This is a success box.</Box>
+```

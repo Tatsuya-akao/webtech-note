@@ -1,0 +1,65 @@
+@import "@sass-utils";
+
+.container {
+  max-width: 1264px;
+
+  @include tab {
+    max-width: 800px;
+  }
+}
+
+.content {
+  position: relative;
+  display: flex;
+
+  @include tab {
+    flex-wrap: wrap;
+  }
+}
+
+.main {
+  max-width: 800px;
+  padding-bottom: 120px;
+
+  @include tab {
+    max-width: 100%;
+    width: 100%;
+    padding-bottom: 72px;
+  }
+}
+
+.title {
+  font-family: $font-os;
+  text-align: center;
+  color: var(--color-main-dark-01);
+  font-size: rem(40);
+  margin: 64px 0 48px;
+  letter-spacing: 0.02em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  @include tab {
+    margin: 48px 0;
+  }
+
+  @include sp {
+    font-size: rem(28);
+  }
+
+  &::before,
+  &::after {
+    content: "";
+    height: 1px;
+    flex-grow: 1;
+    background-color: rgba(var(--rgb-border), 0.8);
+  }
+
+  &::before {
+    margin-right: 32px;
+  }
+
+  &::after {
+    margin-left: 32px;
+  }
+}

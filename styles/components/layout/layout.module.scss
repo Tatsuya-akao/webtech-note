@@ -1,0 +1,23 @@
+@import "@sass-utils";
+
+.layout {
+  min-height: 100vh;
+  padding-top: 80px; // same as header height
+  display: flex;
+  flex-direction: column;
+
+  @include sp {
+    padding-top: 56px;
+  }
+}
+
+.motion {
+  display: flex;
+  flex-grow: 1;
+}
+
+.main {
+  display: flex;
+  flex-grow: 1;
+  width: 100%; // this fixed the pre tag min-width problem
+}

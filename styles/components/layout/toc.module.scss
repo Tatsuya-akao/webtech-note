@@ -1,0 +1,117 @@
+@import "@sass-utils";
+
+.toc {
+  position: fixed;
+  top: 200px;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  width: 100%;
+  padding: 0 32px;
+  max-width: 1356px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  pointer-events: none;
+  z-index: $z-toc;
+}
+
+.toc_content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.toc_body {
+  width: 256px;
+  margin-top: -24px;
+  background-color: rgba(var(--rgb-white), 1);
+  border: 1px solid rgba(var(--rgb-border), 0.8);
+  border-radius: 10px;
+  padding: 0 8px 0 8px;
+  pointer-events: auto;
+}
+
+.toc_head {
+  position: relative;
+  text-align: center;
+  margin-top: 28px;
+  padding-top: 4px;
+  padding-bottom: 8px;
+  color: var(--color-main-dark-02);
+  font-weight: bold;
+  letter-spacing: 0.02em;
+  font-family: $font-os;
+
+  &::before {
+    content: "";
+    width: 32px;
+    height: 1px;
+    background-color: rgba(var(--rgb-main-dark-02), 0.5);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+  }
+}
+
+.toc_list {
+  width: 100%;
+  max-height: 50vh;
+  padding: 16px 12px 24px;
+  overflow: scroll;
+}
+
+.toc_item {
+  font-size: 16px;
+  padding: 0.25em 0;
+  display: flex;
+  flex-grow: 1;
+  line-height: 1.4;
+  margin-top: 0.25em;
+
+  &:first-child {
+    margin-top: 0;
+  }
+}
+
+.toc_item_level_3 {
+  font-size: 15px;
+  padding-left: 0.75em;
+  margin-top: 0;
+
+  a {
+    &::before {
+      content: "-";
+      margin-right: 4px;
+      color: var(--color-main);
+    }
+  }
+}
+
+.toc_link {
+  display: block;
+  width: 100%;
+  transition: all 0.3s;
+
+  &:hover {
+    color: var(--color-main);
+  }
+}
+
+.toc_btn {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: 1px solid rgba(var(--rgb-border), 0.8);
+  background-color: var(--color-white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  color: var(--color-main-dark-01);
+  cursor: pointer;
+  pointer-events: auto;
+  z-index: 1;
+}

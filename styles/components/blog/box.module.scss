@@ -1,0 +1,21 @@
+@import "@sass-utils";
+
+.box {
+  margin: rem(40) 0;
+  padding: 24px;
+  border-radius: 10px;
+  background-color: var(--color-box-default-bg);
+
+  & > *:first-child {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+}
+
+.success {
+  background-color: var(--color-box-success-bg);
+}
+
+.warning {
+  background-color: var(--color-box-warning-bg);
+}

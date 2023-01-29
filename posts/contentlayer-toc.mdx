@@ -1,0 +1,80 @@
+---
+title: Add a Table of Contents with Contentlayer
+excerpt: How to implement a Table of Contents to MDX blog with Contentlayer.
+publishedAt: 2023-01-21T10:00:00
+category: JavaScript
+tags:
+  - Contentlayer
+image: /images/posts/first-post.png
+isPublished: true
+isFeatured: true
+---
+
+In this article, I'm going to explain how to add a Table of Contents in a MDX blog with Contentlayer.
+
+<Toc />
+
+This might be useful if you use these stacks below:
+
+- Next.js
+- Contentlayer
+
+## Install packages
+
+First of all, we need to install 2 packages.
+
+<Box type='success'>
+
+- `rehype-slug`
+- `github-slugger`
+
+</Box>
+
+## Create toc.jsx file
+
+First, create `toc.jsx` for creating Toc component. The file name doesn't matter so you name whatever you like.
+
+Then, paste the code below.
+
+<CodeHead lang="jsx" name="/components/toc.jsx" />
+
+```jsx showLineNumbers
+import { useEffect } from "react";
+import tocbot from "tocbot";
+
+export default function Toc() {
+  useEffect(() => {
+    tocbot.init({
+      tocSelector: ".toc-content",
+      contentSelector: ".user-content",
+      headingSelector: "h2, h3",
+      scrollSmoothOffset: -100,
+      scrollSmoothDuration: 200,
+    });
+
+    return () => tocbot.destroy();
+  }, []);
+
+  return (
+    <div className="toc">
+      <div className="toc-card">
+        <div className="toc-icon">
+          <MdOutlineToc />
+        </div>
+        <p className="toc-head">- Table of Contents -</p>
+        <div className="toc-content"></div>
+      </div>
+    </div>
+  );
+}
+```
+
+We use `useEffect` to initialize toc, then get all heading tags in the document. You can actually select target heading elements using `headingSelector` option. For me, `h2` and `h3` are enough.
+
+### Set an offset value for sticky header
+
+In my case, I have a header that sticks at the top of the page, so I set `scrollSmoothOffset` option.
+
+### For people who don't use Contentlayer but uses Next.js or React
+
+Some text here some text here text here some text heretext here some text heretext here some text here.

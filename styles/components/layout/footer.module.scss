@@ -1,0 +1,93 @@
+@import "@sass-utils";
+
+.footer {
+  padding: 40px 0 16px;
+  border-top: 1px solid var(--color-border);
+}
+
+.container {
+  max-width: 1264px;
+  height: 100%;
+}
+
+.inner {
+}
+
+.nav {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+}
+
+.nav_list {
+  display: flex;
+}
+
+.nav_item {
+  margin: 0 8px;
+
+  @include sp {
+    margin: 0 4px;
+  }
+}
+
+.nav_link {
+  font-size: rem(14);
+  font-weight: bold;
+  letter-spacing: 0.02em;
+  color: var(--color-footer-link);
+  padding: 4px 12px;
+  transition: color 0.3s;
+
+  &:hover {
+    color: var(--color-main);
+  }
+}
+
+.sns_list {
+  display: flex;
+  margin-top: 24px;
+}
+
+.sns_item {
+  margin: 0 16px;
+}
+
+.sns_link {
+  font-size: rem(24);
+  color: var(--color-footer-link);
+  transition: all 0.3s;
+
+  @include sp {
+    font-size: rem(20);
+  }
+}
+
+.sns_github {
+  &:hover {
+    color: var(--color-logo-gh);
+  }
+}
+
+.sns_twitter {
+  &:hover {
+    color: var(--color-logo-tw);
+  }
+}
+
+.sns_ig {
+  &:hover {
+    color: var(--color-logo-ig);
+  }
+}
+
+.copy {
+  font-size: rem(14);
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  color: var(--color-footer-copy);
+  text-align: center;
+  margin-top: 40px;
+}

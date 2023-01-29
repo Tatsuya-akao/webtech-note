@@ -1,0 +1,285 @@
+@import "@sass-utils";
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: $z-header;
+  background-color: rgba(var(--rgb-header-bg), 0.4);
+  border-bottom: 1px solid rgba(var(--rgb-border), 0.8);
+  backdrop-filter: blur(8px) saturate(180%);
+}
+
+.container {
+  max-width: 1238px;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 0;
+}
+
+.inner {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 100%;
+  padding: 8px 24px;
+
+  @include sp {
+    padding: 8px 14px;
+  }
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  padding: 8px 10px;
+  margin-right: 40px;
+
+  @include sp {
+    padding: 4px 0;
+  }
+
+  span {
+    position: relative;
+    font-size: rem(15);
+    font-weight: bold;
+    letter-spacing: 0.02em;
+    margin-left: 4px;
+
+    @include sp {
+      font-size: rem(14);
+      margin-left: 6px;
+    }
+
+    color: transparent;
+    -webkit-background-clip: text;
+    background-image: linear-gradient(
+      90deg,
+      var(--color-main) 0,
+      var(--color-main) 50%,
+      var(--color-text) 50.1%,
+      var(--color-text) 100%
+    );
+    background-size: 200% 100%;
+    background-position: 100% 0;
+    transition: all 0.3s;
+  }
+}
+
+.note {
+  position: relative;
+  height: rem(40);
+  width: rem(40);
+  perspective: 80px;
+
+  @include sp {
+    height: rem(32);
+    width: rem(32);
+  }
+}
+
+.note_back,
+.note_front {
+  transition: all 0.6s;
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  backface-visibility: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  img {
+    @include sp {
+      width: auto;
+      height: 100%;
+    }
+  }
+}
+
+.note_back {
+  transform: rotateY(-180deg);
+}
+
+.logo:hover {
+  span {
+    background-position: 0 0;
+  }
+
+  .note_back {
+    transform: rotateY(0);
+  }
+
+  .note_front {
+    transform: rotateY(180deg);
+  }
+}
+
+.nav {
+  height: 100%;
+
+  @include sp {
+    display: none;
+  }
+
+  &_list {
+    display: flex;
+    height: 100%;
+  }
+
+  &_item {
+    height: 100%;
+    margin-left: rem(16);
+  }
+
+  &_link {
+    position: relative;
+    display: flex;
+    align-items: center;
+    height: 100%;
+    padding: 4px 12px;
+    font-size: rem(14);
+    font-weight: bold;
+    color: var(--color-header-link);
+    letter-spacing: 0.02em;
+    border-radius: 10px;
+    transition: all 0.3s;
+
+    &:hover {
+      color: var(--color-main);
+    }
+  }
+}
+
+.hamburger_btn {
+  display: none;
+  position: relative;
+  width: 24px;
+  height: 24px;
+
+  @include sp {
+    display: block;
+  }
+
+  span,
+  &::before,
+  &::after {
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 1px;
+    background-color: var(--color-text);
+    transition: all 0.3s;
+  }
+
+  &::before,
+  &::after {
+    content: "";
+  }
+
+  &::before {
+    top: 4px;
+  }
+
+  span {
+    top: 0;
+    bottom: 0;
+    margin: auto 0;
+  }
+
+  &::after {
+    bottom: 4px;
+  }
+}
+
+.hamburger_btn_open {
+  span {
+    opacity: 0;
+  }
+
+  &::before {
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    transform: rotate(45deg);
+  }
+
+  &::after {
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    transform: rotate(-45deg);
+  }
+}
+
+.menu {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+
+  z-index: $z-menu;
+  transform: translateX(-100%);
+  transition: all 0.4s;
+
+  @include sp {
+    display: block;
+  }
+}
+
+.menu_content {
+  width: 60vw;
+  min-width: 240px;
+  height: 100%;
+  background-color: rgba(var(--rgb-white), 0.4);
+  backdrop-filter: blur(8px) saturate(180%);
+  border-right: 1px solid rgba(var(--rgb-border), 0.8);
+  padding: 120px 24px;
+}
+
+.menu_list {
+}
+
+.menu_item {
+  border-bottom: 1px solid rgba(var(--rgb-border), 0.8);
+}
+
+.menu_link {
+  display: flex;
+  justify-content: center;
+  font-size: rem(20);
+  font-weight: bold;
+  color: var(--color-nav-link);
+  padding: 0.5em;
+}
+
+.menu_open {
+  transform: translateX(0);
+}
+
+.menu_sns_list {
+  display: flex;
+  justify-content: center;
+  margin-top: 32px;
+}
+
+.menu_sns_item {
+  margin: 0 12px;
+}
+
+.menu_sns_link {
+  font-size: rem(24);
+  color: var(--color-nav-link);
+}

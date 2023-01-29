@@ -1,0 +1,231 @@
+---
+title: Snow falling animation using CSS and JavaScript
+excerpt: Creating snow falling animation on your web page.
+publishedAt: 2023-01-18T12:00:00
+category: JavaScript
+tags:
+  - Winter
+image: /images/posts/winter-snow-falling-effect-thumbnail.png
+isPublished: true
+isFeatured: true
+---
+
+When you create components such as `Button` or `Heading` which output elements with various options of HTML tags, what do you do?
+
+<Box>
+  This should have a gray color because the props for the coloring is not
+  passed, hence it has the default light gray color.
+</Box>
+
+In this article, I am going to explain how to pass HTML tags with props in React.
+
+## How to implement snow falling effect using JavaScript and CSS
+
+<Box type="success">This is the sample box.</Box>
+
+By doing this, you can pass any kinds of heading tags.
+
+I hope you learn something new from this article.
+
+Here's another box that has a props of `warning`.
+
+## HTML
+
+<Box type="warning">
+  This is the warning box. See how the background color is different than the
+  previous one which has no props passed.
+</Box>
+
+### What you need to think about
+
+<CodeHead lang="js" />
+
+```js showLineNumbers {4}
+const btn = document.querySelector(".btn");
+const btn = document.querySelector(".btn");
+
+const btn = document.querySelector(".btn");
+const btn = document.querySelector(".btn");
+```
+
+For using Sass, I actually use SCSS syntax for it. The title says it's Sass and it's not wrong, but SCSS to be more specific. For using Sass, I actually use SCSS syntax for it. The title says it's Sass and it's not wrong, but SCSS to be more specific.
+
+### This is another level 3 title
+
+For using Sass, I actually use SCSS syntax for it. The title says it's Sass and it's not wrong, but SCSS to be more specific. For using Sass, I actually use SCSS syntax for it. The title says it's Sass and it's not wrong, but SCSS to be more specific. For using Sass, I actually use SCSS syntax for it. The title says it's Sass and it's not wrong, but SCSS to be more specific. For using Sass, I actually use SCSS syntax for it. The title says it's Sass and it's not wrong, but SCSS to be more specific.
+
+### This is another level 3 title. This will be multi line so that I can check the design.
+
+I actually use SCSS syntax for it. The title says it's Sass and it's not wrong, but SCSS to be more specific. I actually use SCSS syntax for it. The title says it's Sass and it's not wrong, but SCSS to be more specific.
+
+I actually use SCSS syntax for it. The title says it's Sass and it's not wrong, but SCSS to be more specific.
+
+#### This is h4 title This is h4 title
+
+For using Sass, I actually use SCSS syntax for it. The title says it's Sass and it's not wrong, but SCSS to be more specific. For using Sass, I actually use SCSS syntax for it. The title says it's Sass and it's not wrong, but SCSS to be more specific. For using Sass, I actually use SCSS syntax for it. The title says it's Sass and it's not wrong, but SCSS to be more specific.
+
+#### This is h4 title This is h4 title This is h4 title This is h4 title This is h4 title This is h4 title
+
+For using Sass, I actually use SCSS syntax for it. The title says it's Sass and it's not wrong, but SCSS to be more specific. For using Sass, I actually use SCSS syntax for it. The title says it's Sass and it's not wrong, but SCSS to be more specific. For using Sass, I actually use SCSS syntax for it. The title says it's Sass and it's not wrong, but SCSS to be more specific. For using Sass, I actually use SCSS syntax for it. The title says it's Sass and it's not wrong, but SCSS to be more specific. For using Sass, I actually use SCSS syntax for it. The title says it's Sass and it's not wrong, but SCSS to be more specific. For using Sass, I actually use SCSS syntax for it. The title says it's Sass and it's not wrong, but SCSS to be more specific.
+
+<CodeHead name="app/front/components/some-directory/index.js" lang="js" />
+
+```js showLineNumbers{10} {4}
+const btn = document.querySelector(".btn");
+const btn = document.querySelector(".btn");
+
+const btn = document.querySelector(".btn");
+const btn = document.querySelector(".btn");
+```
+
+I actually use SCSS syntax for it. The title says it's Sass and it's not wrong, but SCSS to be more specific.I actually use SCSS syntax for it. The title says it's Sass and it's not wrong, but SCSS to be more specific.
+
+##### This is h5 title This is h5 title
+
+I actually use SCSS syntax for it. The title says it's Sass and it's not wrong, but SCSS to be more specific.I actually use SCSS syntax for it. The title says it's Sass and it's not wrong, but SCSS to be more specific.
+
+I actually use SCSS syntax for it. The title says it's Sass and it's not wrong, but SCSS to be more specific.
+
+##### This is h5 title This is h5 title. This should be multi line so that I can hceck how it looks lile.
+
+I actually use SCSS syntax for it. The title says it's Sass and it's not wrong, but SCSS to be more specific.I actually use SCSS syntax for it. The title says it's Sass and it's not wrong, but SCSS to be more specific.
+
+I actually use SCSS syntax for it. The title says it's Sass and it's not wrong, but SCSS to be more specific.
+
+<CodeHead name="index.html" lang="html" />
+
+```html showLineNumbers
+<div class="sample classes-here">
+  <p>This is the html template for checking the layout...</p>
+  <p>Just random text in here.</p>
+</div>
+```
+
+## JavaScript
+
+<BlogImage
+  src="/images/posts/first-post.png"
+  alt="sample img"
+  width={1600}
+  height={900}
+  caption="This is a sample caption for blog image component. When a string is passed to the caption prop, this gets rendered. Otherwise, this figcaption won't appear."
+/>
+
+<BlogImage
+  src="/images/posts/first-post.png"
+  alt="sample img"
+  width={1600}
+  height={900}
+/>
+
+This is the sample text that comes in under the image. The sentence must have at least several lines so that I can check it better. This is the sample text that comes in under the image. The sentence must have at least several lines so that I can check it better.
+
+<Box type="success">
+<CodeHead name="app/index.jsx" lang="jsx" />
+
+```jsx showLineNumbers
+import margin from "@/styles/components/blog/margin.module.scss";
+import { IoLogoJavascript, IoLogoHtml5 } from "react-icons/io5";
+
+export default function CodeHead({ name, lang }) {
+  const langData = outputLanguageString(lang);
+
+  return (
+    <div className={`${s.code_head} ${margin.t_medium}`}>
+      <div className={s.text_wrap}>
+        {name && <span className={s.name}>{name}</span>}
+      </div>
+    </div>
+  );
+}
+```
+
+## JavaScript
+
+This is the p tag I guess.
+
+</Box>
+
+### Create a function for snow falling
+
+The CSS code looks like below.
+
+<CodeHead name="app/index.css" lang="css" />
+
+```css showLineNumbers
+.box {
+  position: relative;
+  width: 100%;
+}
+
+.box::before {
+  content: "";
+  display: block;
+  padding-top: 100%;
+}
+```
+
+<CodeHead lang="css" />
+
+```css showLineNumbers
+.box {
+  position: relative;
+  width: 100%;
+}
+
+.box::before {
+  content: "";
+  display: block;
+  padding-top: 100%;
+}
+```
+
+For using Sass, I actually use SCSS syntax for it. The title says it's Sass and it's not wrong, but SCSS to be more specific.
+
+<CodeHead lang="scss" />
+
+```scss showLineNumbers
+.box {
+  position: relative;
+  width: 100%;
+}
+
+.box::before {
+  content: "";
+  display: block;
+  padding-top: 100%;
+}
+```
+
+> This is the quoted text. This can be multi line text.
+> It can be like this.
+> It can be like this.
+> The end of blockquote.
+
+You can check out the official [Next.js Documentation that teaches you the best out of all other articles on the internet](https://google.com) from here.
+
+Now the hot reload seems not working.
+
+<Box type="success">
+  <UnorderedList>
+    <li>
+      <OuterLink href="google.com">test link</OuterLink>
+    </li>
+    <li>
+      <OuterLink>test link</OuterLink>
+    </li>
+    <li>
+      <OuterLink>test link</OuterLink>
+    </li>
+  </UnorderedList>
+</Box>
+
+- list 01
+- list 02
+- list 03
+
+1. this is list this is listthis is listthis is listthis is this is listthis is listthis is listthis is listthis is listthis is listthis is listthis is listthis is listthis is listthis is listlistthis is list
+2. this is list
+3. this is list
+
+That's all. Now move on to another article.

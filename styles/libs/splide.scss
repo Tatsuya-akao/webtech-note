@@ -1,0 +1,22 @@
+@import "@sass-utils";
+
+.splide__track {
+  overflow: visible !important;
+}
+
+.splide__pagination {
+  position: static !important;
+  margin-top: rem(16) !important;
+}
+
+.splide__pagination__page {
+  background-color: transparent !important;
+  border: 1px solid var(--color-main) !important;
+  transform: scale(1.2) !important;
+  opacity: 1 !important;
+  margin: 4px !important;
+
+  &.is-active {
+    background-color: var(--color-main) !important;
+  }
+}

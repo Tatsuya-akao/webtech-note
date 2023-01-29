@@ -1,0 +1,154 @@
+$themes: light, dark;
+
+$theme-colors: (
+  text: (
+    #333,
+    #fff,
+  ),
+  white: (
+    #fff,
+    #121212,
+  ),
+  header-bg: (
+    #f9fafb,
+    #252627,
+  ),
+  main-bg: (
+    #f8fafc,
+    #181818,
+  ),
+  border: (
+    #e8edf2,
+    #3f4245,
+  ),
+  main: (
+    #1b85ff,
+    #49abff,
+  ),
+  main-dark-01: (
+    #6e8094,
+    #9dadbe,
+  ),
+  main-dark-02: (
+    #536982,
+    #9dadbe,
+  ),
+  card-time: (
+    #9fb0b9,
+    #9fb0b9,
+  ),
+  card-excerpt: (
+    #78868e,
+    #78868e,
+  ),
+  nav-link: (
+    #525e66,
+    #c0d1dc,
+  ),
+  header-link: (
+    #525e66,
+    #c0d1dc,
+  ),
+  footer-link: (
+    #525e66,
+    #c0d1dc,
+  ),
+  footer-copy: (
+    #525e66,
+    #c0d1dc,
+  ),
+  box-default-bg: (
+    #e8edf2,
+    #e8edf2,
+  ),
+  box-success-bg: (
+    #e0f3ff,
+    #e0f3ff,
+  ),
+  box-warning-bg: (
+    #fff4ce,
+    #fff4ce,
+  ),
+  editor-bg: (
+    #1b242e,
+    #1b242e,
+  ),
+  editor-border: (
+    #334155,
+    #334155,
+  ),
+  editor-highlight: (
+    #75b1ff,
+    #75b1ff,
+  ),
+  logo-gh: (
+    #6e5494,
+    #6e5494,
+  ),
+  logo-tw: (
+    #1da1f2,
+    #1da1f2,
+  ),
+  logo-ig: (
+    #cd486b,
+    #cd486b,
+  ),
+  lang-js: (
+    #ffd600,
+    #ffd600,
+  ),
+  lang-html: (
+    #ff8c0b,
+    #ff8c0b,
+  ),
+  lang-css: (
+    #2ea8ff,
+    #2ea8ff,
+  ),
+  lang-scss: (
+    #cc6699,
+    #cc6699,
+  ),
+  lang-jsx: (
+    #82f3ff,
+    #82f3ff,
+  ),
+  editor-red: (
+    #ff5f57,
+    #ff5f57,
+  ),
+  editor-yellow: (
+    #febc2e,
+    #febc2e,
+  ),
+  editor-green: (
+    #28c840,
+    #28c840,
+  ),
+);
+
+@each $theme in $themes {
+  @if $theme == light {
+    :root {
+      @each $name, $colors in $theme-colors {
+        $color: nth($colors, index($themes, $theme));
+        $r: red($color);
+        $g: green($color);
+        $b: blue($color);
+        --color-#{$name}: #{$color};
+        --rgb-#{$name}: #{$r, $g, $b};
+      }
+    }
+  } @else {
+    :root[data-theme="#{$theme}"] {
+      @each $name, $colors in $theme-colors {
+        $color: nth($colors, index($themes, $theme));
+        $r: red($color);
+        $g: green($color);
+        $b: blue($color);
+        --color-#{$name}: #{$color};
+        --rgb-#{$name}: #{$r, $g, $b};
+      }
+    }
+  }
+}

@@ -34,3 +34,11 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# contentlayer
+.contentlayer
+
+# personal memo
+references.md
+blog-idea.md
+tasks.md

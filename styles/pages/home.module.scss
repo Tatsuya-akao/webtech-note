@@ -1,0 +1,42 @@
+@import "@sass-utils";
+
+// .slider {
+//   padding-top: 40px;
+//   width: 100vw;
+//   margin: 0 calc(50% - 50vw) 40px;
+//   overflow: hidden;
+// }
+
+.container {
+  max-width: 1264px;
+
+  @include tab {
+    max-width: 800px;
+  }
+}
+
+.content {
+  position: relative;
+  display: flex;
+  justify-content: center;
+
+  @include tab {
+    flex-wrap: wrap;
+  }
+}
+
+.main {
+  max-width: 800px;
+  padding-bottom: 120px;
+  margin-top: 48px;
+
+  @include tab {
+    max-width: 100%;
+    width: 100%;
+    padding-bottom: 72px;
+  }
+
+  @include sp {
+    padding-bottom: 40px;
+  }
+}

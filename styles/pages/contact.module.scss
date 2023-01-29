@@ -1,0 +1,140 @@
+@import "@sass-utils";
+
+.contact {
+  position: relative;
+  max-width: 900px;
+  width: 100%;
+  padding: 80px 0;
+  margin: 80px auto;
+  background-color: var(--color-white);
+  border: 1px solid rgba(var(--rgb-border), 0.8);
+
+  @include tab {
+    max-width: 800px;
+    margin-top: 48px;
+  }
+
+  @include sp {
+    padding: 40px 0;
+    margin-bottom: 64px;
+  }
+}
+
+.container {
+  max-width: 720px;
+}
+
+.main_title {
+  font-size: rem(48);
+
+  @include sp {
+    font-size: rem(40);
+    line-height: 1.2;
+  }
+}
+
+.lead_text {
+  font-size: rem(18);
+  font-weight: 400;
+  letter-spacing: 0.02em;
+  line-height: 1.75;
+  margin-top: 16px;
+
+  a {
+    background-image: repeating-linear-gradient(
+      90deg,
+      var(--color-main),
+      var(--color-main)
+    );
+    background-size: 0 2px;
+    background-repeat: no-repeat;
+    background-position: left bottom 3px;
+    color: var(--color-main);
+    transition: all 0.3s;
+
+    &:hover {
+      background-size: 100% 2px;
+    }
+  }
+}
+
+.form_row {
+  display: flex;
+  flex-direction: column;
+  margin-top: 40px;
+
+  @include sp {
+    margin-top: 24px;
+  }
+
+  label {
+    font-size: rem(18);
+
+    span {
+      color: var(--color-main);
+      margin-left: 4px;
+    }
+  }
+}
+
+.form_control {
+  flex-grow: 1;
+  margin-top: 16px;
+
+  @include sp {
+    margin-top: 8px;
+  }
+
+  input,
+  textarea {
+    width: 100%;
+    font-size: rem(18);
+    font-weight: 400;
+    letter-spacing: 0.02em;
+    color: var(--color-text);
+    border: 1px solid rgba(var(--rgb-border), 1);
+    border-radius: 5px;
+    background-color: var(--color-white);
+    padding: 0.5em;
+    outline: none;
+    transition: all 0.3s;
+
+    @include sp {
+      padding: 0.25em;
+    }
+  }
+}
+
+.form_btn {
+  position: relative;
+  width: 140px;
+  height: 48px;
+  font-size: rem(18);
+  color: var(--color-white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-main);
+  border: none;
+  border: 1px solid var(--color-main);
+  border-radius: 5px;
+  letter-spacing: 0.04em;
+  margin-top: 32px;
+  cursor: pointer;
+  transition: all 0.3s;
+
+  @include sp {
+    height: 40px;
+    margin-top: 24px;
+  }
+
+  span {
+    z-index: 1;
+  }
+
+  &:hover {
+    box-shadow: 0 0 12px rgba(var(--rgb-main), 0.2);
+    background-color: var(--color-white);
+    color: var(--color-main);
+  }
+}

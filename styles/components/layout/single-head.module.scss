@@ -1,0 +1,143 @@
+@import "@sass-utils";
+
+.head {
+  border-bottom: 1px solid rgba(var(--rgb-border), 0.8);
+  padding: 0 0 1.5em;
+  margin-bottom: rem(40);
+}
+
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  font-size: rem(15);
+
+  a {
+    margin-right: 8px;
+    color: var(--color-main-dark-01);
+    transition: color 0.3s;
+
+    &:hover {
+      color: var(--color-main);
+    }
+  }
+
+  svg {
+    font-size: rem(13);
+    margin-right: 8px;
+    color: var(--color-main-dark-01);
+  }
+}
+
+.thumb {
+  width: 100%;
+  position: relative;
+  padding-top: 56.25%;
+  border-radius: 20px;
+  overflow: hidden;
+  margin-top: rem(16);
+  margin-bottom: rem(32);
+
+  @include sp {
+    border-radius: 10px;
+  }
+
+  img {
+    object-fit: cover;
+  }
+}
+
+.head_info {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-top: rem(40);
+}
+
+.category {
+  background-color: var(--color-main);
+  color: var(--color-white);
+  font-size: rem(13);
+  font-weight: bold;
+  letter-spacing: 0.04em;
+  padding: 2px 10px;
+  border: 2px solid var(--color-main);
+  border-radius: 5px;
+  transition: all 0.3s;
+
+  &:hover {
+    color: var(--color-main);
+    background-color: var(--color-white);
+  }
+}
+
+.time_wrap {
+  display: flex;
+}
+
+.time {
+  display: flex;
+  align-items: center;
+  color: var(--color-main-dark-01);
+  font-size: rem(14);
+  letter-spacing: 0.04em;
+  margin-left: rem(16);
+
+  svg {
+    margin-right: 4px;
+  }
+
+  .icon_published {
+    width: rem(15);
+    height: rem(15);
+  }
+
+  .icon_revised {
+    width: rem(16);
+    height: rem(16);
+  }
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: rem(16);
+}
+
+.tag {
+  margin: 0.5em 0.5em 0 0;
+}
+
+.tag_link {
+  display: flex;
+  align-items: center;
+  letter-spacing: 0.02em;
+  font-weight: 500;
+  font-size: rem(14);
+  border: 1px solid rgba(var(--rgb-main-dark-01), 0.2);
+  padding: 1px 8px;
+  border-radius: 30px;
+  color: var(--color-main-dark-01);
+  transition: all 0.3s;
+
+  &:hover {
+    color: var(--color-white);
+    background-color: var(--color-main);
+  }
+
+  span {
+    font-size: rem(12);
+    margin-right: 4px;
+  }
+}
+
+.title {
+  font-family: $font-os;
+  font-size: rem(32);
+  line-height: 1.4;
+  letter-spacing: 0.02em;
+  margin-top: rem(16);
+
+  @include sp {
+    font-size: rem(24);
+  }
+}

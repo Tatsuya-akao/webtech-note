@@ -1,0 +1,20 @@
+@function rem($pixels) {
+  @return $pixels / 16 * 1rem;
+}
+
+// breakpoints
+
+$bp-tab: 992px;
+$bp-sp: 650px;
+
+@mixin tab {
+  @media (max-width: ($bp-tab)) {
+    @content;
+  }
+}
+
+@mixin sp {
+  @media (max-width: ($bp-sp)) {
+    @content;
+  }
+}

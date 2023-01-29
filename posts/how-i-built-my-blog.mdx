@@ -1,0 +1,146 @@
+---
+title: How and Why I built my MDX blog with Next.js
+excerpt: Some excerpt right here
+publishedAt: 2023-01-24T20:00:00
+category: Next.js
+tags:
+  - Contentlayer
+  - MDX
+  - Vercel
+  - Giscus
+image: /images/posts/winter-snow-falling-effect-thumbnail.png
+isPublished: true
+isFeatured: true
+---
+
+I originally own a blog on WordPress, where I share my knowledge and experience as a web developer. Now that I've spent almost 3 years with it, I decided to start a new blog with modern tech stack.
+
+While I was doing my research on what tech stack I should use for my blog, I found [this article by Josh Comeau](https://www.joshwcomeau.com/blog/how-i-built-my-blog/) and I was facinated by the idea of importing totally custom-made components in your articles. So I decided to build my blog with MDX and Next.js even though I was completely new to Next.js and even React.
+
+After struggling for a few months, I managed to deploy this blog which is my very first Next.js project.
+
+In this article, I'm gonna briefly explain how I built this MDX blog with Next.js.
+
+<Box type="warning">
+  This article is <span>not a step-by-step guide or tutorial.</span> I'll post
+  an another article for that topic.
+</Box>
+
+<Toc />
+
+## Tech Stack
+
+Here's the list of the tech stack I used for this blog.
+
+- [Next.js](https://google.com)
+- CSS Modules (Sass)
+- MDX
+- Contentlayer
+- Vercel
+
+### Next.js
+
+Next.js is a React framework for building web applications. I chose Next.js because I am learning React right now and it is built with it, so I thought I could learn many stuff building up this blog.
+
+Also, Next.js has so many cool features that make your website really fast and customizable.
+
+### CSS Modules (Sass)
+
+For styling, I used CSS Modules with Sass. I chose them simply because I have been using Sass for years and feel comfortable with it.
+
+CSS Modules are supported by default, and all you need is to add `module.css` at the end of a file (in my case, `module.scss`) and then you can write component-scoped styles with all those powerful features in Sass.
+
+I'll probably try some of CSS in JS libraries later on, but for now I'm satisfied with CSS Modules with Sass.
+
+### MDX
+
+MDX is like a conbination of markdown and JSX. This means you can import React components into your markdown files.
+
+I write articles in `mdx` files.
+
+The coolest thing about MDX is that, on top of markdown syntax, **you can use JSX and React components.**
+
+This means you can build your own custom components and import it wherever you want in your blog articles.
+
+### Contentlayer
+
+I manage my mdx files using Contentlayer. Contentlayer is a content preprocessor.
+
+By using this, you can safely manage your contents with type-safe JSON.
+
+I have tried to build a MDX blog by following a tutorial in Next.js docs, but it was so complicated and I had to write so many code just to get articles data.
+
+In Contentlayer, you can get the data by writing a single code, and you can do whatever you want with it.
+
+<CodeHead lang="jsx" name="/pages/index.js" />
+
+```jsx showLineNumbers
+// import package
+import { allPosts } from "contentlayer/generated/generated/generatedcontentlayer/generated/generated/generatedcontentlayer/generated/generated/generatedcontentlayer/generated/generated/generated";
+
+const posts = allPosts;
+
+allPosts.map((post) => {
+  const { id, name, title } = post;
+
+  return (
+    <div key={id}>
+      <p>{name}</p>
+      <p>{title}</p>
+    </div>
+  );
+});
+```
+
+I'm not gonna go over how to get articles without Contentlayer, but this is so much easier than the one in Next.js tutorial.
+
+### Vercel
+
+I host this blog on Vercel. I simply chose it because Vercel is made by the creators of Next.js and I thought it would work the best.
+
+### Giscus
+
+I use Giscus for implementing comment functionality. The reasons I chose Giscus was because:
+
+- Easy to use
+- Free and no ads
+- Only Github users can leave comments
+
+It's completely free and you don't need to put ads that look ugly.
+
+Another good thing is that only Github users can comment, so it has a certain level of security and low risk of spamming.
+
+There's a similar package called [Utterances](https://google.com) which also uses Github. One of the differences is that Utterances use Github issues, while Giscus uses Discussions. I thought Discussions would make more sense than issues since it's a comment system, so I chose Giscus over Utterances.
+
+## Design
+
+As a non-designer myself, it was really hard to design everything from scratch. So I searched for other developer blogs and documentations for inspiration and got some ideas from each site.
+
+These are the ones I was mainly inspired by:
+
+- [Next.js Documentation](https://nextjs.org/docs/getting-started)
+- [Josh Comeau](https://www.joshwcomeau.com/)
+- [Delba](https://delba.dev/)
+
+I wanted to make my design as simple as possible, so I use blue as the main color, and the rest is either black or gray.
+
+What I cared the most about is the **white space**. I've seen many developers using lack of white space which end up looking really bad. So I put margins and paddings rather exessively if you have noticed.
+
+Instead of decorating headings, I put white space. **This helps keep its simplicity.**
+
+Although I'm not completely satisfied, I'll go with this for now.
+
+## Upcoming updates
+
+As the blog grows, I am going to add more functionalities and other stuff. For now, I'm thinking of these updates:
+
+- Contact form
+- Pagination
+- Comment system
+- Like button on each post
+- Google Analytics
+- Replace everything with TypeScript
+
+I could have done some of these before, but I was afraid I could go on and on and end up not publishing forever.
+
+If you have any request, please leave a comment or send me messages throguh Twitter or Contact form.

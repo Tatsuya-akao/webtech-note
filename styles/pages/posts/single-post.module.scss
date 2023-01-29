@@ -1,0 +1,114 @@
+@import "@sass-utils";
+
+.main {
+  position: relative;
+  max-width: 1100px;
+  width: 100%;
+  margin: 80px auto;
+  background-color: var(--color-white);
+  border: 1px solid rgba(var(--rgb-border), 0.8);
+
+  @include tab {
+    margin: 32px auto 72px;
+  }
+}
+
+.article {
+  max-width: 720px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 100px 0;
+
+  @include tab {
+    padding: 80px 0;
+  }
+
+  @include sp {
+    padding: 40px 0;
+  }
+}
+
+.user_content {
+  position: relative;
+  width: 100%;
+  font-size: rem(19);
+  font-weight: 400;
+  line-height: 1.75;
+  letter-spacing: 0.02em;
+
+  a {
+    background-image: repeating-linear-gradient(
+      90deg,
+      var(--color-main),
+      var(--color-main)
+    );
+    background-size: 0 2px;
+    background-repeat: no-repeat;
+    background-position: left bottom 3px;
+    color: var(--color-main);
+    transition: all 0.3s;
+
+    &:hover {
+      background-size: 100% 2px;
+    }
+  }
+
+  // margins
+
+  p {
+    margin-top: 1.25em;
+  }
+
+  h2 {
+    margin-top: 2em;
+  }
+
+  h3 {
+    margin-top: 2em;
+
+    & + p {
+      margin-top: 1em;
+    }
+  }
+
+  h4 {
+    margin-top: 2em;
+  }
+
+  h5 {
+    margin-top: 2.5em;
+  }
+}
+
+// dummy styles for comment section
+.comment {
+  border-top: 1px solid var(--color-border);
+  margin-top: 80px;
+  padding-top: 40px;
+
+  @include sp {
+    margin-top: 56px;
+  }
+}
+
+.comment_head {
+  font-size: rem(24);
+  font-weight: bold;
+  color: rgba(var(--rgb-text), 0.5);
+}
+
+.comment_box {
+  border: 1px solid var(--color-border);
+  border-radius: 10px;
+  font-size: rem(16);
+  margin-top: rem(40);
+
+  p {
+    padding: 0.5em 1em;
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  div {
+    height: rem(140);
+  }
+}

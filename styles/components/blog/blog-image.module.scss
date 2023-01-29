@@ -1,0 +1,19 @@
+@import "@sass-utils";
+
+.figure {
+  margin: rem(40) 0;
+}
+
+.img {
+  width: 100%;
+  height: auto;
+}
+
+.caption {
+  width: 80%;
+  text-align: center;
+  color: var(--color-main-dark-02);
+  font-size: 1rem;
+  line-height: 1.5;
+  margin: 0.75em auto 0;
+}

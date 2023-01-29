@@ -1,0 +1,34 @@
+@import "@sass-utils";
+
+.list {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: -48px;
+  margin-right: -48px;
+
+  @include tab {
+    margin-top: -32px;
+    margin-right: -32px;
+  }
+
+  @include sp {
+    margin-top: -24px;
+    margin-right: 0;
+  }
+}
+
+.item {
+  display: flex;
+  width: calc(50% - 48px);
+  margin: 48px 48px 0 0;
+
+  @include tab {
+    width: calc(50% - 32px);
+    margin: 32px 32px 0 0;
+  }
+
+  @include sp {
+    width: 100%;
+    margin: 24px 0 0 0;
+  }
+}
