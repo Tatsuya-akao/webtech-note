@@ -4,6 +4,7 @@ import { GoFileDirectory } from "react-icons/go";
 import { ImPriceTags } from "react-icons/im";
 import { allCategoriesData, getCategoryArchiveLink } from "@/utils/categories";
 import { allTagsData, getTagArchiveLink } from "@/utils/tags";
+import { openSans } from "@/utils/fonts";
 
 export default function Sidebar() {
   const categories = allCategoriesData;
@@ -12,7 +13,7 @@ export default function Sidebar() {
   return (
     <aside className={`${s.sidebar} `}>
       <div className={s.block}>
-        <p className={s.block_head}>
+        <p className={`${s.block_head} ${openSans.className}`}>
           <GoFileDirectory />
           Category
         </p>
@@ -34,7 +35,7 @@ export default function Sidebar() {
       </div>
 
       <div className={s.block}>
-        <p className={s.block_head}>
+        <p className={`${s.block_head} ${openSans.className}`}>
           <ImPriceTags />
           Tag
         </p>

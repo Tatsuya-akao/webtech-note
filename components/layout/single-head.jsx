@@ -7,6 +7,7 @@ import { FaChevronRight } from "react-icons/fa";
 import s from "@/styles/components/layout/single-head.module.scss";
 import { getTagsData } from "@/utils/tags";
 import { getSingleCategorySlug } from "@/utils/categories";
+import { openSans } from "@/utils/fonts";
 
 export default function SingleHead({ post }) {
   const { category, publishedAt, image, title, tags } = post;
@@ -23,7 +24,7 @@ export default function SingleHead({ post }) {
       </div>
 
       <div className={s.thumb}>
-        <Image src={image} fill alt={title} priority />
+        <Image src={image} width={1600} height={900} alt={title} priority />
       </div>
 
       <div className={s.head_info}>
@@ -45,7 +46,7 @@ export default function SingleHead({ post }) {
         </div>
       </div>
 
-      <h1 className={s.title}>{title}</h1>
+      <h1 className={`${s.title} ${openSans.className}`}>{title}</h1>
 
       <ul className={s.tags}>
         {tagsData.map((tag) => {

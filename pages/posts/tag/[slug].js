@@ -6,6 +6,7 @@ import s from "@/styles/pages/posts/archive.module.scss";
 import { getAllTagSlugs, allTagsData, getPostsByTag } from "@/utils/tags";
 import { NextSeo } from "next-seo";
 import { siteTitle } from "@/utils/seo";
+import { openSans, openSansThin } from "@/utils/fonts";
 
 export default function TagPage({ target, posts }) {
   return (
@@ -26,9 +27,11 @@ export default function TagPage({ target, posts }) {
       />
       <Layout>
         <Container additionalClass={s.container}>
-          <h1 className={s.title}>
+          <h1 className={`${s.title} ${openSans.className}`}>
             <span className={s.title_wrap}>
-              <span className={s.title_head}>- TAG -</span>
+              <span className={`${s.title_head} ${openSansThin.className}`}>
+                - TAG -
+              </span>
               <span className={s.title_main}>{target.name}</span>
             </span>
           </h1>

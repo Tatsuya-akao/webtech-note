@@ -1,13 +1,11 @@
 import Layout from "@/components/layout/layout";
 import Container from "@/components/layout/container";
-import Image from "next/image";
 import Link from "next/link";
-
-import aboutImg from "/public/images/posts/second-post.png";
 
 import s from "@/styles/pages/about.module.scss";
 import { NextSeo } from "next-seo";
 import { siteTitle } from "@/utils/seo";
+import { openSans } from "@/utils/fonts";
 
 const About = () => {
   return (
@@ -29,7 +27,9 @@ const About = () => {
       <Layout>
         <main className={s.about}>
           <Container additionalClass={s.container}>
-            <h1 className={s.main_title}>About Me</h1>
+            <h1 className={`${s.main_title} ${openSans.className}`}>
+              About Me
+            </h1>
             <div className={s.content}>
               <div className={s.intro}>
                 <p>
@@ -57,7 +57,7 @@ const About = () => {
                   often see me traveling in SouthEast Asia.
                 </p>
 
-                <h2>Experience</h2>
+                <h2 className={openSans.className}>Experience</h2>
                 <p>
                   I started learning web development in 2018 November. After 3
                   months of self-study, I got the first project on a
@@ -70,7 +70,7 @@ const About = () => {
                   corporate website coding.
                 </p>
 
-                <h2>My goal at the moment</h2>
+                <h2 className={openSans.className}>My goal at the moment</h2>
                 <p>
                   For the past 4 years, I've done so many WordPress projects but
                   I got almost no experience in using modern tech stack like
@@ -85,7 +85,7 @@ const About = () => {
                   clients outside of Japan.
                 </p>
 
-                <h2>About WebTech Note</h2>
+                <h2 className={openSans.className}>About WebTech Note</h2>
                 <p>
                   In this blog, I'm gonna write about web development, mostly
                   front-end stuff. My current interests are Next.js and React,
@@ -124,7 +124,7 @@ const About = () => {
               </div>
 
               <div className={s.contact}>
-                <h2>Contact Me</h2>
+                <h2 className={openSans.className}>Contact Me</h2>
                 <p>
                   If you'd like to talk to me or ask me something, feel free to
                   contact me through the options below:

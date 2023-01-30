@@ -40,19 +40,19 @@
 .thumb {
   width: 100%;
   position: relative;
-  padding-top: 56.25%;
   border-radius: 20px;
   overflow: hidden;
   margin-top: 16px;
   margin-bottom: 32px;
 
+  img {
+    width: 100%;
+    height: auto;
+  }
+
   @include sp {
     margin-top: 8px;
     border-radius: 10px;
-  }
-
-  img {
-    object-fit: cover;
   }
 }
 
@@ -141,7 +141,6 @@
 }
 
 .title {
-  font-family: $font-os;
   font-size: rem(32);
   line-height: 1.4;
   letter-spacing: 0.02em;

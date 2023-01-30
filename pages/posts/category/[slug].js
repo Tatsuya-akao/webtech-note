@@ -10,6 +10,7 @@ import {
 } from "@/utils/categories";
 import { NextSeo } from "next-seo";
 import { siteTitle } from "@/utils/seo";
+import { openSans, openSansThin } from "@/utils/fonts";
 
 export default function CategoryPage({ target, posts }) {
   return (
@@ -30,9 +31,11 @@ export default function CategoryPage({ target, posts }) {
       />
       <Layout>
         <Container additionalClass={s.container}>
-          <h1 className={s.title}>
+          <h1 className={`${s.title} ${openSans.className}`}>
             <span className={s.title_wrap}>
-              <span className={s.title_head}>- CATEGORY -</span>
+              <span className={`${s.title_head} ${openSansThin.className}`}>
+                - CATEGORY -
+              </span>
               <span className={s.title_main}>{target.name}</span>
             </span>
           </h1>

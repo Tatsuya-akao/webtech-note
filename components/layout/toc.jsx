@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { MdOutlineToc, MdClose } from "react-icons/md";
 
 import s from "@/styles/components/layout/toc.module.scss";
+import { openSans } from "@/utils/fonts";
 
 export default function Toc({ headings }) {
   const [isTocOpen, setIsTocOpen] = useState(false);
@@ -28,7 +29,7 @@ export default function Toc({ headings }) {
           variants={variants}
           className={s.toc_body}
         >
-          <p className={s.toc_head}>Contents</p>
+          <p className={`${s.toc_head} ${openSans.className}`}>Contents</p>
           <ul className={s.toc_list}>
             {headings.map((heading) => {
               return heading.level === 2 ? (

@@ -1,8 +1,9 @@
 import Link from "next/link";
 import Image from "next/image";
 import { AiOutlineClockCircle } from "react-icons/ai";
-import { compareDesc, format, parseISO } from "date-fns";
+import { format, parseISO } from "date-fns";
 import s from "@/styles/components/layout/post-card.module.scss";
+import { openSans } from "@/utils/fonts";
 
 export default function PostCard({ post, headingLevel }) {
   const { category, tags, excerpt, title, image, publishedAt, url } = post;
@@ -11,18 +12,23 @@ export default function PostCard({ post, headingLevel }) {
     const HeadingTag = headingLevel;
 
     return (
-      <HeadingTag className={s.heading}>
+      <HeadingTag className={`${s.heading} ${openSans.className}`}>
         <span>{title}</span>
       </HeadingTag>
     );
   };
 
   return (
-    <Link href={url} className={s.card}>
+    <Link href={url} as={url} className={s.card}>
       <p className={`${s.cat}`}>{category}</p>
       <div className={s.thumb_wrap}>
         <div className={s.thumb}>
-          <Image src={image} fill alt={title} />
+          <Image
+            src={image}
+            fill
+            sizes="(max-width: 650px) 100vw, 33vw"
+            alt={title}
+          />
         </div>
       </div>
       <div className={s.content}>

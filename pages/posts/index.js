@@ -7,6 +7,7 @@ import { compareDesc } from "date-fns";
 import s from "@/styles/pages/posts/posts.module.scss";
 import { NextSeo } from "next-seo";
 import { siteTitle } from "@/utils/seo";
+import { openSans } from "@/utils/fonts";
 
 export default function PostsPage({ posts }) {
   return (
@@ -27,7 +28,7 @@ export default function PostsPage({ posts }) {
       />
       <Layout>
         <Container additionalClass={s.container}>
-          <h1 className={s.title}>All Posts</h1>
+          <h1 className={`${s.title} ${openSans.className}`}>All Posts</h1>
           <div className={s.content}>
             <main className={s.main}>
               <PostList posts={posts} headingLevel="h2" />
