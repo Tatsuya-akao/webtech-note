@@ -25,7 +25,7 @@ export const manuallyOrderedCategories = [
   "CSS",
   "JavaScript",
   "Next.js",
-  "React",
+  // "React",
   "VS Code",
 ];
 
