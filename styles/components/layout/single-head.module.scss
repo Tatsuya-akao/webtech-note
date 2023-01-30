@@ -11,9 +11,14 @@
   align-items: center;
   font-size: rem(15);
 
+  @include sp {
+    font-size: rem(13);
+  }
+
   a {
     margin-right: 8px;
     color: var(--color-main-dark-01);
+    letter-spacing: 0.02em;
     transition: color 0.3s;
 
     &:hover {
@@ -25,6 +30,10 @@
     font-size: rem(13);
     margin-right: 8px;
     color: var(--color-main-dark-01);
+
+    @include sp {
+      font-size: rem(10);
+    }
   }
 }
 
@@ -34,10 +43,11 @@
   padding-top: 56.25%;
   border-radius: 20px;
   overflow: hidden;
-  margin-top: rem(16);
-  margin-bottom: rem(32);
+  margin-top: 16px;
+  margin-bottom: 32px;
 
   @include sp {
+    margin-top: 8px;
     border-radius: 10px;
   }
 

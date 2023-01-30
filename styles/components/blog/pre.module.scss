@@ -1,16 +1,12 @@
 @import "@sass-utils";
 
 .pre {
-  // overflow: auto;
-  // width: 100%;
-  // max-width: 100%;
-  // display: block;
-
   /* stylist preferences */
   padding-top: 1rem;
   padding-bottom: 1.2rem;
   font-size: 0.875rem;
   line-height: 1.5rem;
+  overflow-x: auto;
 
   @include sp {
     padding-top: 0.75rem;
@@ -18,22 +14,54 @@
     line-height: 1.5;
   }
 
-  // test
-  overflow-x: auto;
+  &::-webkit-scrollbar {
+    scrollbar-width: 5px;
+    height: 10px;
+    background: var(--color-editor-bg);
+  }
 
-  // &::-webkit-scrollbar {
-  //   scrollbar-width: 5px;
-  //   height: 10px;
-  //   background: #34352e;
-  // }
+  &::-webkit-scrollbar-thumb {
+    background: var(--color-editor-border);
+    border-radius: 6px;
+  }
 
-  // &::-webkit-scrollbar-thumb {
-  //   background: rgba(255, 255, 255, 0.2);
-  //   border-radius: 6px;
-  // }
+  &::-webkit-scrollbar-track {
+    background: var(--color-editor-bg);
+    border-radius: 6px;
+  }
+}
 
-  // &::-webkit-scrollbar-track {
-  //   background: #34352e;
-  //   border-radius: 6px;
-  // }
+.copy {
+  position: absolute;
+  right: 16px;
+  top: 16px;
+  border: 1px solid rgba(var(--rgb-border), 0.2);
+  color: var(--color-white);
+  width: 28px;
+  height: 28px;
+  border-radius: 4px;
+  cursor: pointer;
+  backdrop-filter: blur(5px);
+  font-size: rem(16);
+  transition: all 0.3s;
+
+  &:hover {
+    background-color: rgba(var(--rgb-white), 0.2);
+  }
+
+  &.copy_done {
+    background-color: #00cd10;
+  }
+}
+
+.icon_done {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon_copy {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }

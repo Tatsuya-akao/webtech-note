@@ -131,9 +131,23 @@ const About = () => {
                 </p>
 
                 <p>
-                  - <a>Twitter</a>
-                  <br />- <a>Github</a>
-                  <br />- <a>Contact Form</a>
+                  -{" "}
+                  <a
+                    href="https://twitter.com/a_tatsu1512"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    Twitter
+                  </a>
+                  <br />-{" "}
+                  <a
+                    href="https://github.com/Tatsuya-akao"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    Github
+                  </a>
+                  {/* <br />- <a>Contact Form</a> */}
                 </p>
               </div>
             </div>
