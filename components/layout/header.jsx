@@ -101,6 +101,7 @@ export default function Header({ home }) {
                   ? `${s.hamburger_btn} ${s.hamburger_btn_open}`
                   : `${s.hamburger_btn}`
               }
+              aria-label="Hamburger Menu"
             >
               <span></span>
             </button>
