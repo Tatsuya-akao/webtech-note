@@ -1,6 +1,5 @@
 import Link from "next/link";
 import Image from "next/image";
-import { format, parseISO } from "date-fns";
 import { AiOutlineClockCircle } from "react-icons/ai";
 import { BsArrowClockwise } from "react-icons/bs";
 import { FaChevronRight } from "react-icons/fa";
@@ -8,6 +7,7 @@ import s from "@/styles/components/layout/single-head.module.scss";
 import { getTagsData } from "@/utils/tags";
 import { getSingleCategorySlug } from "@/utils/categories";
 import { openSans } from "@/utils/fonts";
+import { formatDate } from "@/utils/date";
 
 export default function SingleHead({ post }) {
   const { category, publishedAt, image, title, tags } = post;
@@ -34,13 +34,13 @@ export default function SingleHead({ post }) {
         <div className={s.time_wrap}>
           <time className={s.time}>
             <AiOutlineClockCircle className={s.icon_published} />
-            {format(parseISO(publishedAt), "LLLL d, yyyy")}
+            {formatDate(publishedAt)}
           </time>
 
           {post.revisedAt && (
             <time className={s.time}>
               <BsArrowClockwise className={s.icon_revised} />
-              {format(parseISO(post.revisedAt), "LLLL d, yyyy")}
+              {formatDate(revisedAt)}
             </time>
           )}
         </div>

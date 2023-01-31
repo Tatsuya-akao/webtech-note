@@ -1,9 +1,9 @@
 import Link from "next/link";
 import Image from "next/image";
 import { AiOutlineClockCircle } from "react-icons/ai";
-import { format, parseISO } from "date-fns";
 import s from "@/styles/components/layout/post-card.module.scss";
 import { openSans } from "@/utils/fonts";
+import { formatDate } from "@/utils/date";
 
 export default function PostCard({ post, headingLevel }) {
   const { category, tags, excerpt, title, image, publishedAt, url } = post;
@@ -46,7 +46,7 @@ export default function PostCard({ post, headingLevel }) {
         <div className={s.info}>
           <p className={s.time}>
             <AiOutlineClockCircle />
-            {format(parseISO(publishedAt), "LLLL d, yyyy")}
+            {formatDate(publishedAt)}
           </p>
         </div>
       </div>
