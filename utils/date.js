@@ -1,7 +1,10 @@
 // january 25, 2023
 
+import { utcToZonedTime } from "date-fns-tz";
+
 export const formatDate = (dateData) => {
-  const data = new Date(dateData);
+  const data = utcToZonedTime(dateData, "Asia/Tokyo");
+
   const year = data.getFullYear();
   const monthIndex = data.getMonth();
   const date = data.getDate();

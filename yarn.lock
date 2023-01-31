@@ -1016,7 +1016,12 @@
   "resolved" "https://registry.npmjs.org/data-uri-to-buffer/-/data-uri-to-buffer-4.0.1.tgz"
   "version" "4.0.1"
 
-"date-fns@^2.29.3":
+"date-fns-tz@^2.0.0":
+  "integrity" "sha512-OAtcLdB9vxSXTWHdT8b398ARImVwQMyjfYGkKD2zaGpHseG2UPHbHjXELReErZFxWdSLph3c2zOaaTyHfOhERQ=="
+  "resolved" "https://registry.npmjs.org/date-fns-tz/-/date-fns-tz-2.0.0.tgz"
+  "version" "2.0.0"
+
+"date-fns@^2.29.3", "date-fns@>=2.0.0":
   "integrity" "sha512-dDCnyH2WnnKusqvZZ6+jA1O51Ibt8ZMRNkDZdyAyK4YfbDwa/cEmuztzG5pk6hqlp9aSBPYcjOlktquahGwGeA=="
   "resolved" "https://registry.npmjs.org/date-fns/-/date-fns-2.29.3.tgz"
   "version" "2.29.3"
