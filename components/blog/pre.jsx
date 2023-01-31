@@ -19,7 +19,7 @@ export default function Pre({ ...props }) {
   useEffect(() => {
     const timer = setTimeout(() => {
       setIsCopied(false);
-    }, 3000);
+    }, 1500);
 
     return () => {
       clearTimeout(timer);

@@ -1,11 +1,15 @@
 import { allPosts } from "contentlayer/generated";
 import { formatSlug } from "@/utils/slugs";
+import { compareDesc } from "date-fns";
 
 // returns an array that contains all categories: ['Category 1', 'Category 2', 'Category 3']
 export const allCategories = Array.from(
   new Set(
     allPosts
       .filter((post) => post.isPublished)
+      .sort((a, b) => {
+        return compareDesc(new Date(a.publishedAt), new Date(b.publishedAt));
+      })
       .map((post) => post.category)
       .flat()
   )

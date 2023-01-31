@@ -5,7 +5,7 @@ import Link from "next/link";
 
 import s from "@/styles/pages/contact.module.scss";
 import { NextSeo } from "next-seo";
-import { siteTitle } from "@/utils/seo";
+import { siteTitle, domain } from "@/utils/seo";
 
 const Contact = () => {
   return (
@@ -16,7 +16,7 @@ const Contact = () => {
         openGraph={{
           images: [
             {
-              url: "http://localhost:3000/ogp.png",
+              url: `${domain}/ogp.png`,
               width: 1300,
               height: 630,
               alt: "WebTech Note",

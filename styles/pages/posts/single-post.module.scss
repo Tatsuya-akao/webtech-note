@@ -56,6 +56,11 @@
   line-height: 1.75;
   letter-spacing: 0.02em;
 
+  @include sp {
+    font-size: rem(18);
+    line-height: 1.6;
+  }
+
   a {
     background-image: repeating-linear-gradient(
       90deg,

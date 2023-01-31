@@ -7,6 +7,8 @@ import {
   IoLogoCss3,
   IoLogoSass,
   IoLogoMarkdown,
+  IoTerminal,
+  IoTerminalOutline,
 } from "react-icons/io5";
 
 export default function CodeHead({ name, lang }) {
@@ -52,6 +54,12 @@ export default function CodeHead({ name, lang }) {
         return {
           name: "MDX",
           icon: <IoLogoMarkdown />,
+        };
+      }
+      case "console": {
+        return {
+          name: "console",
+          icon: <IoTerminalOutline />,
         };
       }
       default:

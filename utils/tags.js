@@ -1,10 +1,14 @@
 import { allPosts } from "contentlayer/generated";
 import { formatSlug } from "@/utils/slugs";
+import { compareDesc } from "date-fns";
 
 export const allTags = Array.from(
   new Set(
     allPosts
       .filter((post) => post.isPublished)
+      .sort((a, b) => {
+        return compareDesc(new Date(a.publishedAt), new Date(b.publishedAt));
+      })
       .map((post) => post.tags)
       .flat()
   )

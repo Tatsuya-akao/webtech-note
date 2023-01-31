@@ -6,7 +6,7 @@ import { allPosts } from "contentlayer/generated";
 import { compareDesc } from "date-fns";
 import s from "@/styles/pages/posts/posts.module.scss";
 import { NextSeo } from "next-seo";
-import { siteTitle } from "@/utils/seo";
+import { siteTitle, domain } from "@/utils/seo";
 import { openSans } from "@/utils/fonts";
 
 export default function PostsPage({ posts }) {
@@ -18,7 +18,7 @@ export default function PostsPage({ posts }) {
         openGraph={{
           images: [
             {
-              url: "http://localhost:3000/ogp.png",
+              url: `${domain}/ogp.png`,
               width: 1300,
               height: 630,
               alt: "WebTech Note",

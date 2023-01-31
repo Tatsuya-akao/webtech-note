@@ -5,7 +5,7 @@ import PostList from "@/components/layout/post-list";
 import s from "@/styles/pages/posts/archive.module.scss";
 import { getAllTagSlugs, allTagsData, getPostsByTag } from "@/utils/tags";
 import { NextSeo } from "next-seo";
-import { siteTitle } from "@/utils/seo";
+import { siteTitle, domain } from "@/utils/seo";
 import { openSans, openSansThin } from "@/utils/fonts";
 
 export default function TagPage({ target, posts }) {
@@ -17,7 +17,7 @@ export default function TagPage({ target, posts }) {
         openGraph={{
           images: [
             {
-              url: "http://localhost:3000/ogp.png",
+              url: `${domain}/ogp.png`,
               width: 1300,
               height: 630,
               alt: "WebTech Note",

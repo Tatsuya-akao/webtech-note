@@ -1,0 +1,78 @@
+@import "@sass-utils";
+
+.main {
+  display: flex;
+  width: 100%;
+  padding: 120px 0;
+
+  @include sp {
+    padding: 80px 0;
+  }
+}
+
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  span {
+    &:first-child {
+      font-size: rem(180);
+      line-height: 1;
+
+      @include sp {
+        font-size: rem(100);
+      }
+    }
+
+    &:last-child {
+      font-size: rem(40);
+      letter-spacing: 0.04em;
+
+      @include sp {
+        font-size: rem(24);
+      }
+    }
+  }
+}
+
+.text {
+  font-size: rem(20);
+  text-align: center;
+  letter-spacing: 0.02em;
+  line-height: 1.75;
+  margin-top: 24px;
+
+  @include sp {
+    font-size: rem(16);
+  }
+}
+
+.btn_wrap {
+  margin-top: 40px;
+}
+
+.btn {
+  display: flex;
+  font-weight: 500;
+  color: var(--color-white);
+  letter-spacing: 0.04em;
+  border: 2px solid var(--color-main);
+  background-color: var(--color-main);
+  padding: 12px 32px;
+  border-radius: 100px;
+  transition: all 0.3s;
+
+  &:hover {
+    background-color: var(--color-white);
+    color: var(--color-main);
+  }
+}

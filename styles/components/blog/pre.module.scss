@@ -45,6 +45,11 @@
   font-size: rem(16);
   transition: all 0.3s;
 
+  @include sp {
+    top: 12px;
+    right: 12px;
+  }
+
   &:hover {
     background-color: rgba(var(--rgb-white), 0.2);
   }
