@@ -1,4 +1,3 @@
-import { AnimatePresence } from "framer-motion";
 import { DefaultSeo } from "next-seo";
 
 import "@/styles/base/reset.scss";
@@ -16,11 +15,9 @@ function MyApp({ Component, pageProps }) {
     <>
       <DefaultSeo {...seoProps} />
 
-      <AnimatePresence mode="wait">
-        <div className={mukta.className}>
-          <Component {...pageProps} />
-        </div>
-      </AnimatePresence>
+      <div className={mukta.className}>
+        <Component {...pageProps} />
+      </div>
     </>
   );
 }

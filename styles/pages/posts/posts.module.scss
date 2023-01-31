@@ -20,6 +20,7 @@
 .main {
   max-width: 800px;
   padding-bottom: 120px;
+  flex-grow: 1;
 
   @include tab {
     max-width: 100%;
