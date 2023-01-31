@@ -1,0 +1,40 @@
+---
+title: React errors when deploying Next.js apps to Vercel
+excerpt: Some excerpt right here
+publishedAt: 2023-01-31T13:00:00
+category: Next.js
+tags:
+  - Vercel
+  - date-fns
+image: /images/posts/winter-snow-falling-effect-thumbnail.png
+isPublished: true
+isFeatured: false
+---
+
+I ran into some errors when I deployed my Next.js project to Vercel.
+
+- Error(num)
+- Error(num)
+- Error(num)
+
+These errors didn't show up in the development emvironment, and only in production. Also, pages work without any problem with these errors.
+
+## How I solved these errors
+
+I noticed that the errors only occur in pages where I use `new Date`, and the problem was because the timezone in Vercel and my location differs, which causes these rendering errors.
+
+To fix these errors, you need to install some packages.
+
+```
+npm install date-fns date-fns-tz
+```
+
+These packages are used for formatting published date.
+
+If your timezone is other than 'US', this article will help you solve these errors.
+
+### 1. Install packages
+
+### 2. Replace new Date with utcToZonedTime
+
+sample text

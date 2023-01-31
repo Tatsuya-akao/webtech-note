@@ -10,7 +10,7 @@ import { siteTitle } from "@/utils/seo";
 import Toc from "../../components/blog/toc";
 
 const PostLayout = ({ post }) => {
-  // useLiveReload();
+  useLiveReload();
 
   const { image, title, excerpt } = post;
 

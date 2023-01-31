@@ -27,7 +27,7 @@ export default function Header({ home }) {
                   <div className={s.note}>
                     <div className={s.note_front}>
                       <Image
-                        src="/images/logo-06.svg"
+                        src="/images/logo-main.svg"
                         width={40}
                         height={40}
                         alt="WebTech Note"
@@ -35,7 +35,7 @@ export default function Header({ home }) {
                     </div>
                     <div className={s.note_back}>
                       <Image
-                        src="/images/logo-07.svg"
+                        src="/images/logo-sub.svg"
                         width={40}
                         height={40}
                         alt="WebTech Note"
@@ -50,7 +50,7 @@ export default function Header({ home }) {
                 <div className={s.note}>
                   <div className={s.note_front}>
                     <Image
-                      src="/images/logo-06.svg"
+                      src="/images/logo-main.svg"
                       width={40}
                       height={40}
                       alt="WebTech Note"
@@ -58,7 +58,7 @@ export default function Header({ home }) {
                   </div>
                   <div className={s.note_back}>
                     <Image
-                      src="/images/logo-07.svg"
+                      src="/images/logo-sub.svg"
                       width={40}
                       height={40}
                       alt="WebTech Note"
