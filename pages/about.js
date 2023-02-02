@@ -33,14 +33,14 @@ const About = () => {
             <div className={s.content}>
               <div className={s.intro}>
                 <p>
-                  Hi 👋 I'm Tatsuya, a self-taught front-end web developer
-                  fromJapan. It's been 4 years since I started my career as a
-                  webdeveloper, and I've been freelancing since the beginning.
+                  Hi 👋 I'm Tatsuya, a self-taught front-end web developer from
+                  Japan. It's been 4 years since I started my career as a web
+                  developer, and I've been freelancing since the beginning.
                 </p>
                 <p>
                   I am passionate about learning new things, and web development
-                  is the best for me because it offers the endless amount of
-                  learning.
+                  is the best for me because it never stops evolving and it's
+                  fun to keep up with the latest technologies.
                 </p>
                 {/* <div className={s.img_wrap}>
                   <Image src={aboutImg} alt="about" />
@@ -49,7 +49,7 @@ const About = () => {
                   Currently, I'm interested in React, Next.js, TypeScript and
                   other front-end stuff. Also, as I go deeper in the front-end
                   world, I became more and more interested in back-end.
-                  Eventuallly, I wanna be a full-stack developer.
+                  Eventuallly, I am planning to become a full-stack developer.
                 </p>
                 <p>
                   Aside from work, I love traveling. I often use Couchsurfing
@@ -106,7 +106,7 @@ const About = () => {
                   it's been almost 3 years and I'm getting bored of using the
                   same stack.
                 </p>
-                <p>In this blog, I use following tech stack:</p>
+                <p>In this blog, I use the following tech stack:</p>
 
                 <ul>
                   <li>Next.js</li>

@@ -1,5 +1,5 @@
 ---
-title: How and Why I built my MDX blog with Next.js
+title: Introducing my MDX blog with Next.js and how it works
 excerpt: Some excerpt right here
 publishedAt: 2023-01-24T20:00:00
 category: Next.js
@@ -8,48 +8,56 @@ tags:
   - MDX
   - Vercel
   - Giscus
-image: /images/default.png
+image: /images/posts/how-i-built-my-blog/thumb.png
 isPublished: true
 isFeatured: true
 ---
 
-I originally own a blog on WordPress, where I share my knowledge and experience as a web developer. Now that I've spent almost 3 years with it, I decided to start a new blog with modern tech stack.
+I originally own a blog on WordPress, where I share my knowledge and experience as a web developer. Now that I've spent almost 3 years working on it, I decided to start a new blog with modern tech stack.
 
-While I was doing my research on what tech stack I should use for my blog, I found [this article by Josh Comeau](https://www.joshwcomeau.com/blog/how-i-built-my-blog/) and I was facinated by the idea of importing totally custom-made components in your articles. So I decided to build my blog with MDX and Next.js even though I was completely new to Next.js and even React.
-
-After struggling for a few months, I managed to deploy this blog which is my very first Next.js project.
-
-In this article, I'm gonna briefly explain how I built this MDX blog with Next.js.
+After struggling for a few months, I managed to deploy this blog which is my very first Next.js project. In this article, I'm gonna briefly explain how I built this MDX blog with Next.js.
 
 <Box type="warning">
   This article is <span>not a step-by-step guide or tutorial.</span> I'll post
   an another article for that topic.
 </Box>
 
-<CodeHead lang="jsx" />
-
-```jsx
-
-import 'content' from 'contentlayer/generated/this/is/the/test/for/the/testing/if/thedirectory/is/too/lonmg/and/generated/generated/generated';
-
-
-```
-
 ## Tech Stack
 
-Here's the list of the tech stack I used for this blog.
+Here's the list of the tech stack I used for this blog, and I'll explain why I chose them.
 
-- [Next.js](https://google.com)
-- CSS Modules (Sass)
-- MDX
-- Contentlayer
-- Vercel
+- [Next.js](https://nextjs.org/)
+- [CSS Modules (Sass)](https://github.com/css-modules/css-modules)
+- [MDX](https://mdxjs.com/)
+- [Contentlayer](https://www.contentlayer.dev/)
+- [Vercel](https://vercel.com/home)
 
 ### Next.js
 
-Next.js is a React framework for building web applications. I chose Next.js because I am learning React right now and it is built with it, so I thought I could learn many stuff building up this blog.
+Next.js is a React framework for building web applications. I chose Next.js for the following reasons.
 
-Also, Next.js has so many cool features that make your website really fast and customizable.
+<Box type="success">
+  <UnorderedList>
+    <li>It is built with React</li>
+    <li>It offers two types of pre-rendering: SSR and SSG</li>
+    <li>It has many performance optimizations</li>
+    <li>It works great with MDX</li>
+  </UnorderedList>
+</Box>
+
+For pre-rendering options, I use SSG (Static Site Generation) because my blog contents are totally static. It generates the HTML at build time, and it will be reused on each request, unlike SSR that generates the HTML on every request.
+
+On top of SSG, Next.js has so many performance optimization such as code-splitting, `next/image`, `next/font`, `next/script`, etc.
+
+These features make the website super fast.
+
+<BlogImage
+  src="/images/posts/first-post.png"
+  alt="sample img"
+  width={1600}
+  height={900}
+  caption="This is a sample caption for blog image component. When a string is passed to the caption prop, this gets rendered. Otherwise, this figcaption won't appear."
+/>
 
 ### CSS Modules (Sass)
 
