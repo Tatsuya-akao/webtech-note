@@ -1,16 +1,26 @@
 import s from "@/styles/components/blog/box.module.scss";
-import margin from "@/styles/components/blog/margin.module.scss";
 
 export default function Box({ children, type = "normal" }) {
-  let boxClass;
+  const outputBoxClass = (type) => {
+    switch (type) {
+      case "normal": {
+        return s.normal;
+      }
+      case "success": {
+        return s.success;
+      }
+      case "success_l": {
+        return s.success_l;
+      }
+      case "warning": {
+        return s.warning;
+      }
+      default:
+        return s.normal;
+    }
+  };
 
-  if (type === "normal") {
-    boxClass = s.normal;
-  } else if (type === "success") {
-    boxClass = s.success;
-  } else if (type === "warning") {
-    boxClass = s.warning;
-  }
+  const boxClass = outputBoxClass(type);
 
   return <div className={`${s.box} ${boxClass}`}>{children}</div>;
 }

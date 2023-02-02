@@ -7,6 +7,9 @@ export default function BlogImage({
   caption,
   width,
   height,
+  hasBorder,
+  hasShadow,
+  children,
   ...props
 }) {
   return (
@@ -16,15 +19,19 @@ export default function BlogImage({
         alt={alt}
         width={width}
         height={height}
-        className={s.img}
+        className={`${s.img} 
+        ${hasBorder && s.img_border}
+        ${hasShadow && s.img_shadow}`}
         {...props}
       />
 
-      {caption && (
+      {/* {caption && (
         <figcaption className={s.caption}>
           <span>{caption}</span>
         </figcaption>
-      )}
+      )} */}
+
+      {children && <figcaption className={s.caption}>{children}</figcaption>}
     </figure>
   );
 }

@@ -6,7 +6,7 @@ import { MDXComponents } from "@/components/blog/mdx-components";
 import s from "@/styles/pages/posts/single-post.module.scss";
 import { useLiveReload } from "next-contentlayer/hooks";
 import { NextSeo } from "next-seo";
-import { siteTitle } from "@/utils/seo";
+import { siteTitle, domain } from "@/utils/seo";
 import Toc from "../../components/blog/toc";
 
 const PostLayout = ({ post }) => {
@@ -24,7 +24,7 @@ const PostLayout = ({ post }) => {
           description: excerpt,
           images: [
             {
-              url: image,
+              url: `${domain}${image}`,
               width: 1300,
               height: 630,
               alt: title,

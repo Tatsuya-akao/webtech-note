@@ -1,6 +1,6 @@
 ---
 title: Introducing my MDX blog with Next.js and how it works
-excerpt: Some excerpt right here
+excerpt: I have built a MDX blog with Next.js. I'll explain how this blog works, and introduce the teck stack I used.
 publishedAt: 2023-01-24T20:00:00
 category: Next.js
 tags:
@@ -36,7 +36,7 @@ Here's the list of the tech stack I used for this blog, and I'll explain why I c
 
 Next.js is a React framework for building web applications. I chose Next.js for the following reasons.
 
-<Box type="success">
+<Box type="success_l">
   <UnorderedList>
     <li>It is built with React</li>
     <li>It offers two types of pre-rendering: SSR and SSG</li>
@@ -52,60 +52,82 @@ On top of SSG, Next.js has so many performance optimization such as code-splitti
 These features make the website super fast.
 
 <BlogImage
-  src="/images/posts/first-post.png"
-  alt="sample img"
-  width={1600}
-  height={900}
-  caption="This is a sample caption for blog image component. When a string is passed to the caption prop, this gets rendered. Otherwise, this figcaption won't appear."
-/>
+  src="/images/posts/how-i-built-my-blog/site-speed.png"
+  alt="The result of PageSpeed Insights"
+  width={1200}
+  height={679}
+  hasBorder
+  hasShadow
+>
+  [https://pagespeed.web.dev/](https://pagespeed.web.dev/)
+</BlogImage>
 
 ### CSS Modules (Sass)
 
-For styling, I used CSS Modules with Sass. I chose them simply because I have been using Sass for years and feel comfortable with it.
+For styling, I used CSS Modules with Sass. Next.js has built-in support for CSS Modules, and you can use Sass by simply installing `sass` package.
 
-CSS Modules are supported by default, and all you need is to add `module.css` at the end of a file (in my case, `module.scss`) and then you can write component-scoped styles with all those powerful features in Sass.
+By adding `.module.scss` at the end of a file name, you can write a component-scoped styles with Sass features like nesting, variables, and mixins. Also, you don't need to worry about class name conflicts thanks to scoping.
 
-I'll probably try some of CSS in JS libraries later on, but for now I'm satisfied with CSS Modules with Sass.
+I write all the styles by myself because it's much more flexible than using CSS libraries like Bootstrap. For now I'm satisfied with CSS modules and Sass, but I will probably try some of CSS in JS libraries like [Tailwind CSS](https://tailwindcss.com/) or [Emotion](https://emotion.sh/docs/introduction) in the future.
 
 ### MDX
 
-MDX is like a conbination of markdown and JSX. This means you can import React components into your markdown files.
+MDX is a format that allows you to include JSX in Markdown documents. This means **you can import and use custom React components** in markdown files.
 
-I write articles in `mdx` files.
+I actually thoght about using headless CMS for managing contents, but I didn't like the idea of writing contents in the editor, because the variety of the parts you can use are limited and it would be so hard or impossible to create and use custom components.
 
-The coolest thing about MDX is that, on top of markdown syntax, **you can use JSX and React components.**
+In MDX, there's almost no restriction on what you wanna show in the articles. If you want some custom blog parts, you can simply create a component, include it and use it in a mdx file.
 
-This means you can build your own custom components and import it wherever you want in your blog articles.
+To give you an example, I have a `Box` component for wrapping the contents with a certain background color depending on the value of `type` props. In MDX, I use a component like this:
+
+<CodeHead lang="mdx" />
+
+```mdx
+<Box type="success">This is a box component.</Box>
+```
+
+When this is rendered, it looks like below:
+
+<Box type="success">This is a box component.</Box>
+
+This is a pretty simple component, but you can create more complex and interactive components and include them wherever you want.
 
 ### Contentlayer
 
-I manage my mdx files using Contentlayer. Contentlayer is a content preprocessor.
+> Contentlayer is a content preprocessor that validates and transforms your content into type-safe JSON you can easily import into your application.
+>
+> [Contentlayer Documentation – Contentlayer](https://www.contentlayer.dev/docs)
 
-By using this, you can safely manage your contents with type-safe JSON.
+I use Contentlayer as a content processor. It converts my mdx files into type-safe JSON data, and I can easily import them in pages.
 
-I have tried to build a MDX blog by following a tutorial in Next.js docs, but it was so complicated and I had to write so many code just to get articles data.
+I have tried `@next/mdx`, `mdx-bundler`, `next-mdx-remote`, but none of them were better than Contentlayer in terms of the amount of code you have to write, and many other advantages such as the following:
 
-In Contentlayer, you can get the data by writing a single code, and you can do whatever you want with it.
+<Box type="success_l">
+  <UnorderedList>
+    <li>Convert contents into data</li>
+    <li>Easily import data just like you import libraries or components</li>
+    <li>Automatic type definitions</li>
+    <li>Built-in validations for your content & frontmatter</li>
+    <li>Error messages in console for debugging</li>
+    <li>Live reloading</li>
+  </UnorderedList>
+</Box>
 
-I'm not gonna go over how to get articles without Contentlayer, but this is so much easier than the one in Next.js tutorial.
+Another good thing is that they show how to set up everything using Next.js in [their documentation](https://www.contentlayer.dev/docs/getting-started), so all you need is just to follow the guide and you will have a MDX blog with Contentlayer and Next.js.
 
 ### Vercel
 
-I host this blog on Vercel. I simply chose it because Vercel is made by the creators of Next.js and I thought it would work the best.
+Vercel is a cloud platform for serverless deployment, created by the Next.js team.
 
-### Giscus
+I simply chose it because Vercel's platform and Next.js are developed by the same company, and I thought they would work well together.
 
-I use Giscus for implementing comment functionality. The reasons I chose Giscus was because:
+> Vercel is the fastest way to deploy your Next.js application with zero configuration.
+>
+> When deploying to Vercel, the platform automatically detects Next.js, runs next build, and optimizes the build output for you.
 
-- Easy to use
-- Free and no ads
-- Only Github users can leave comments
+To deploy my site, all I need to do is to push my projects to the main branch in my Git repository. Then, Vercel will automatically create a production deployment.
 
-It's completely free and you don't need to put ads that look ugly.
-
-Another good thing is that only Github users can comment, so it has a certain level of security and low risk of spamming.
-
-There's a similar package called [Utterances](https://google.com) which also uses Github. One of the differences is that Utterances use Github issues, while Giscus uses Discussions. I thought Discussions would make more sense than issues since it's a comment system, so I chose Giscus over Utterances.
+For a custom domain, I bought one on [Google Domains](https://domains.google/) but you can also buy it through Vercel.
 
 ## Design
 

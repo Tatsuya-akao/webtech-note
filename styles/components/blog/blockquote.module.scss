@@ -1,13 +1,56 @@
 @import "@sass-utils";
 
 .blockquote {
+  position: relative;
   margin: rem(32) 0;
-  border-left: 3px solid var(--color-border);
-  padding: 12px 16px;
+  color: var(--color-main-dark-02);
+  background-color: rgba(var(--rgb-border), 0.4);
+  border-radius: 10px;
+  font-size: 1.175rem;
+  line-height: 1.5;
+  padding: 48px;
 
+  @include sp {
+    padding: 32px;
+    font-size: 1rem;
+  }
+
+  a {
+    font-size: 1rem;
+    font-style: normal;
+  }
+}
+
+.content {
   & > * {
     &:first-child {
       margin-top: 0;
     }
+  }
+}
+
+.quote_left {
+  position: absolute;
+  left: 24px;
+  top: 18px;
+  color: var(--color-main-dark-01);
+
+  @include sp {
+    font-size: 0.75rem;
+    top: 16px;
+    left: 16px;
+  }
+}
+
+.quote_right {
+  position: absolute;
+  right: 24px;
+  bottom: 18px;
+  color: var(--color-main-dark-01);
+
+  @include sp {
+    font-size: 0.75rem;
+    bottom: 16px;
+    right: 16px;
   }
 }

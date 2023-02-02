@@ -140,7 +140,8 @@ I have created a custom component `<BlogImage />` and here's how it works.
   alt="sample img"
   width={1600}
   height={900}
-  caption="This is a sample caption for blog image component. When a string is passed to the caption prop, this gets rendered. Otherwise, this figcaption won't appear."
+  hasBorder
+  hasShadow
 />
 ```
 
@@ -151,10 +152,39 @@ This should look like below:
   alt="sample img"
   width={1600}
   height={900}
-  caption="This is a sample caption for blog image component. When a string is passed to the caption prop, this gets rendered. Otherwise, this figcaption won't appear."
+  hasBorder
+  hasShadow
 />
 
-All props must be passed except `caption`.
+`hasBorder` and `hasShadow` are optional.
+
+You can pass caption as a children like below:
+
+<CodeHead lang="mdx" />
+
+```mdx
+<BlogImage
+  src="/images/posts/first-post.png"
+  alt="sample img"
+  width={1600}
+  height={900}
+  hasBorder
+  hasShadow
+>
+  This is a caption text. [https://google.com](https://google.com)
+</BlogImage>
+```
+
+<BlogImage
+  src="/images/posts/first-post.png"
+  alt="sample img"
+  width={1600}
+  height={900}
+  hasBorder
+  hasShadow
+>
+  This is a caption text. [https://google.com](https://google.com)
+</BlogImage>
 
 ## Syntax Highlighter
 

@@ -9,6 +9,14 @@
   height: auto;
 }
 
+.img_border {
+  border: 1px solid rgba(var(--rgb-border), 0.8);
+}
+
+.img_shadow {
+  box-shadow: 0 0 12px rgba(var(--rgb-main-dark-01), 0.1);
+}
+
 .caption {
   width: 80%;
   text-align: center;
