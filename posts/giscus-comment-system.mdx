@@ -6,29 +6,41 @@ category: Next.js
 tags:
   - giscus
   - Comments
-image: /images/posts/how-i-built-my-blog/thumb.png
+image: /images/posts/giscus-comment-system/thumb.png
 isPublished: true
 isFeatured: true
 ---
 
-Intro text here
+If you have a personal blog or a website, you might wanna have a comment section that you can interact with the visitors.
+
+As I started my blog in Next.js, I wanted to have a comment system, but I also didn't wanna create everything from scratch, because it would be a lot of work to do so. I looked for the options to implement a comment system, and I found a perfect tool called **giscus**.
+
+In this article, I will explain how to set up a comment system using giscus in Next.js project.
 
 ## What is Giscus?
 
-Giscus is a GitHub Discussions-powered comment system. It is 100% free and open source, and no ads and no tracking.
+Giscus is a GitHub Discussions-powered comment system. Here's a quick overview of giscus:
 
-Here's a quick overview of Giscus:
+<Box type="success_l">
+  <UnorderedList>
+    <li>100% free, no ads and no tracking</li>
+    <li>Open source</li>
+    <li>No database needed</li>
+    <li>Support custom themes and multiple languages</li>
+  </UnorderedList>
+</Box>
 
-- 100% free, no ads and no tracking
-- Open source
-- No database needed
-- Support custom themes and multiple languages
+If you wanna see what it's like in action, you can simply [click here](#enjoy-interacting-with-the-visitors-by-using-giscus) or scroll all the way to the bottom of this page to test it out yourself.
 
-Without having a server, you can manage your comments on GitHub Discussions.
+### Important note
 
-To use Giscus, your repository must be public.
+Before I explain how to set up giscus, I wanna share a few things that you need to consider whether giscus is right for your project or not.
 
-## Install Giscus
+Firstly, **your repository must be public** because giscus uses GitHub Discussions. If the repository is private, the visitors won't be able to view the discussion.
+
+Secondly, **the visitors must have a GitHub account** to leave a reaction or a comment. This should not be a problem if you are running a tech blog where you can expect your visitors to have a GitHub account, but if not, you should reconsider using giscus.
+
+## How to set up giscus in your Next.js project
 
 I'll explain how to set up Giscus in your Next.js project. If you wanna follow the official documentation, you can check out from [here](https://giscus.app/).
 
@@ -36,7 +48,7 @@ I'll explain how to set up Giscus in your Next.js project. If you wanna follow t
 
 First, navigate to your project repository on GitHub, and make sure your repository is public.
 
-Then, click `Settings` and scroll down to Discussions.
+Then, click **Settings** and scroll down to Discussions.
 
 <BlogImage
   src="/images/posts/giscus-comment-system/giscus-settings.png"
@@ -62,9 +74,9 @@ Now, you have successfully enabled Discussions in your repository.
 
 ### 2. Install giscus app in your repository
 
-You need to install giscus app in your repository from [https://github.com/apps/giscus](https://github.com/apps/giscus).
+You need to install giscus app in your repository.
 
-Once you open the giscus app page, hit the install button.
+To do so, you open the [giscus app page](https://github.com/apps/giscus) and hit the install button.
 
 <BlogImage
   src="/images/posts/giscus-comment-system/giscus-app-install.png"

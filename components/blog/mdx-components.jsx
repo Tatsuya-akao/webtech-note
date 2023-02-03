@@ -8,6 +8,7 @@ import CodeHead from "@/components/blog/code-head";
 import Blockquote from "@/components/blog/blockquote";
 import OuterLink from "@/components/blog/outer-link";
 import Toc from "@/components/blog/toc";
+import LinkCard from "@/components/blog/link-card";
 
 import headingStyle from "@/styles/components/blog/headings.module.scss";
 import codeStyle from "@/styles/components/blog/code.module.scss";
@@ -18,6 +19,7 @@ const components = {
   BlogImage,
   OuterLink,
   UnorderedList,
+  LinkCard,
   Toc,
   p: ({ ...props }) => <p {...props} />,
   h2: ({ ...props }) => <h2 className={`${headingStyle.level2}`} {...props} />,

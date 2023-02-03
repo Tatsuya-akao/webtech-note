@@ -1,0 +1,92 @@
+@import "@sass-utils";
+
+.card {
+  display: flex;
+  padding: 16px;
+  box-shadow: 0 0 10px rgba(var(--rgb-main-dark-01), 0.2);
+  min-height: 116px;
+  margin-top: 2rem;
+
+  // reset
+  background: none !important;
+
+  @include sp {
+    padding: 12px;
+    min-height: 80px;
+  }
+
+  &:hover {
+    background: none !important;
+    box-shadow: 0 0 16px rgba(var(--rgb-main), 0.2);
+
+    .content .title {
+      color: var(--color-main);
+    }
+
+    .thumb {
+      img {
+        transform: scale(1.1);
+      }
+    }
+  }
+
+  .thumb_wrap {
+    width: 150px;
+    flex-shrink: 0;
+    margin-right: 24px;
+
+    @include sp {
+      width: 100px;
+      margin-right: 12px;
+    }
+  }
+
+  .thumb {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+
+    @include sp {
+      height: 64px;
+    }
+
+    img {
+      object-fit: cover;
+      transition: transform 0.3s;
+    }
+  }
+
+  .content {
+    flex-grow: 1;
+
+    .title {
+      color: var(--color-text);
+      font-size: rem(18);
+      font-weight: 500;
+      line-height: 1.4;
+      margin-top: 0;
+      transition: color 0.3s;
+
+      @include sp {
+        font-size: rem(16);
+      }
+    }
+
+    .excerpt {
+      color: var(--color-card-excerpt);
+      font-size: rem(15);
+      margin-top: 0;
+      line-height: 1.5;
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 2;
+      overflow: hidden;
+      margin-top: 8px;
+
+      @include sp {
+        display: none;
+      }
+    }
+  }
+}

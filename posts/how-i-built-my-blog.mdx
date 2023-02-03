@@ -1,7 +1,7 @@
 ---
 title: Introducing my MDX blog with Next.js and how it works
 excerpt: I have built a MDX blog with Next.js. I'll explain how this blog works, and introduce the teck stack I used.
-publishedAt: 2023-01-24T20:00:00
+publishedAt: 2023-02-01T20:00:00
 category: Next.js
 tags:
   - Contentlayer
@@ -10,7 +10,7 @@ tags:
   - Giscus
 image: /images/posts/how-i-built-my-blog/thumb.png
 isPublished: true
-isFeatured: true
+isFeatured: false
 ---
 
 I originally own a blog on WordPress, where I share my knowledge and experience as a web developer. Now that I've spent almost 3 years working on it, I decided to start a new blog with modern tech stack.
@@ -30,6 +30,7 @@ Here's the list of the tech stack I used for this blog, and I'll explain why I c
 - [CSS Modules (Sass)](https://github.com/css-modules/css-modules)
 - [MDX](https://mdxjs.com/)
 - [Contentlayer](https://www.contentlayer.dev/)
+- [giscus](https://giscus.app/)
 - [Vercel](https://vercel.com/home)
 
 ### Next.js
@@ -115,6 +116,16 @@ I have tried `@next/mdx`, `mdx-bundler`, `next-mdx-remote`, but none of them wer
 
 Another good thing is that they show how to set up everything using Next.js in [their documentation](https://www.contentlayer.dev/docs/getting-started), so all you need is just to follow the guide and you will have a MDX blog with Contentlayer and Next.js.
 
+### giscus
+
+Giscus is a comments system powered by GitHub Discussions. By using giscus, you can set up a comments section without having to prepare a server by yourself.
+
+The visitors can leave a comment or a reaction by signing in with a GitHub account, and all the comments and reactions are stored in GitHub Discussions.
+
+I wrote an article about how to set up giscus with Next.js project, so check it out if you are interested.
+
+<LinkCard postSlug="giscus-comment-system" />
+
 ### Vercel
 
 Vercel is a cloud platform for serverless deployment, created by the Next.js team.
@@ -131,33 +142,23 @@ For a custom domain, I bought one on [Google Domains](https://domains.google/) b
 
 ## Design
 
-As a non-designer myself, it was really hard to design everything from scratch. So I searched for other developer blogs and documentations for inspiration and got some ideas from each site.
+I designed all the contents in my blog, including thumbnails of the posts. This design part was really hard for me because I'm not very experienced in design. So I got some ideas from other websites, mainly from [Next.js documentation](https://nextjs.org/docs/getting-started).
 
-These are the ones I was mainly inspired by:
+As a non-designer, I don't know many principles or rules in design, so I tried to stick to the rules I made.
 
-- [Next.js Documentation](https://nextjs.org/docs/getting-started)
-- [Josh Comeau](https://www.joshwcomeau.com/)
-- [Delba](https://delba.dev/)
+- Minimize the color usage
+- Use enough white space between content blocks
+- Avoid over-decorating
 
-I wanted to make my design as simple as possible, so I use blue as the main color, and the rest is either black or gray.
+Although the design might be too simple or a little bit boring, I am satisfied with the current design for now. I will probably redesign once I come up with a better idea.
 
-What I cared the most about is the **white space**. I've seen many developers using lack of white space which end up looking really bad. So I put margins and paddings rather exessively if you have noticed.
+## Upcoming features
 
-Instead of decorating headings, I put white space. **This helps keep its simplicity.**
+Here's the list of upcoming features that I'm working on.
 
-Although I'm not completely satisfied, I'll go with this for now.
+- Add a contact form
+- Add pagination
+- Create a like button on each post
+- Convert JavaScript into TypeScript
 
-## Upcoming updates
-
-As the blog grows, I am going to add more functionalities and other stuff. For now, I'm thinking of these updates:
-
-- Contact form
-- Pagination
-- Comment system
-- Like button on each post
-- Google Analytics
-- Replace everything with TypeScript
-
-I could have done some of these before, but I was afraid I could go on and on and end up not publishing forever.
-
-If you have any request, please leave a comment or send me messages throguh Twitter or Contact form.
+If you have any requests or questions, please leave a comment or send me a message on [Twitter](https://twitter.com/a_tatsu1512).
