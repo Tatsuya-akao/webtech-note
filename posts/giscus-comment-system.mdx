@@ -1,0 +1,226 @@
+---
+title: How to add comment system using Giscus in Next.js
+excerpt: excerpt here
+publishedAt: 2023-02-03T14:00:00
+category: Next.js
+tags:
+  - Giscus
+  - Comments
+image: /images/posts/how-i-built-my-blog/thumb.png
+isPublished: true
+isFeatured: true
+---
+
+Intro text here
+
+## What is Giscus?
+
+Giscus is a GitHub Discussions-powered comment system. It is 100% free and open source, and no ads and no tracking.
+
+Here's a quick overview of Giscus:
+
+- 100% free, no ads and no tracking
+- Open source
+- No database needed
+- Support custom themes and multiple languages
+
+Without having a server, you can manage your comments on GitHub Discussions.
+
+To use Giscus, your repository must be public.
+
+## Install Giscus
+
+I'll explain how to set up Giscus in your Next.js project. If you wanna follow the official documentation, you can check out from [here](https://giscus.app/).
+
+### 1. Enable GitHub discussions
+
+First, navigate to your project repository on GitHub, and make sure your repository is public.
+
+Then, click `Settings` and scroll down to Discussions.
+
+<BlogImage
+  src="/images/posts/giscus-comment-system/giscus-settings.png"
+  alt="Click Settings"
+  width={1400}
+  height={192}
+  hasBorder
+  hasShadow
+/>
+
+In the Discussions section, check the box to enable Discussions.
+
+<BlogImage
+  src="/images/posts/giscus-comment-system/giscus-settings-discussions.png"
+  alt="Set up discussions"
+  width={1086}
+  height={476}
+  hasBorder
+  hasShadow
+/>
+
+Now, you have successfully enabled Discussions in your repository.
+
+### 2. Install giscus app in your repository
+
+You need to install giscus app in your repository from [https://github.com/apps/giscus](https://github.com/apps/giscus).
+
+Once you open the giscus app page, hit the install button.
+
+<BlogImage
+  src="/images/posts/giscus-comment-system/giscus-app-install.png"
+  alt="Install giscus app"
+  width={1888}
+  height={960}
+  hasBorder
+  hasShadow
+/>
+
+You can choose to install giscus app in either all repositories or only selected repositories that you wanna use it.
+
+<BlogImage
+  src="/images/posts/giscus-comment-system/giscus-app-repos.png"
+  alt="Install giscus app"
+  width={1200}
+  height={1479}
+  hasBorder
+  hasShadow
+/>
+
+After selecting the repository, click install and wait until it's done.
+
+### 3. Connect your repository to giscus
+
+Now that you've installed giscus in your repository, it's time to connect to giscus.
+
+First, navigate to [https://giscus.app/](https://giscus.app/) and go to Configuration.
+
+In the Repository section, type in your GitHub username and repository name.
+
+<BlogImage
+  src="/images/posts/giscus-comment-system/giscus-config-repo.png"
+  alt="Connect your repository"
+  width={1200}
+  height={460}
+  hasBorder
+  hasShadow
+/>
+
+If everything is working, success message will show up.
+
+<BlogImage
+  src="/images/posts/giscus-comment-system/giscus-config-repo-success.png"
+  alt="Connect your repository - Success"
+  width={1200}
+  height={460}
+  hasBorder
+  hasShadow
+/>
+
+After that, you can configure the following on your own.
+
+<Box type="success_l">
+  <UnorderedList>
+    <li>Page Discussions Mapping</li>
+    <li>Discussion Category</li>
+    <li>Features</li>
+    <li>Theme</li>
+  </UnorderedList>
+</Box>
+
+Once you configured everything, the `script` tag becomes available. We will use the tag in the next step.
+
+<BlogImage
+  src="/images/posts/giscus-comment-system/giscus-cofig-script.png"
+  alt="Enable giscus using the script tag"
+  width={1502}
+  height={880}
+  hasBorder
+  hasShadow
+/>
+
+### 4. Install giscus package
+
+Giscus offers a package for creating a wrapper component.
+
+You could actually use the `script` that's generated, but I personally prefer using `@giscus/react` package.
+
+<CodeHead lang="console" />
+
+```console
+npm i @giscus/react
+```
+
+### 5. Create a giscus component
+
+Now, we create a component for giscus. The component should look like this:
+
+<CodeHead name="/components/comments.jsx" lang="jsx" />
+
+```jsx showLineNumbers
+import Giscus from "@giscus/react";
+
+export default function Comments() {
+  return (
+    <Giscus
+      id="comments"
+      repo="giscus/giscus-component"
+      repoId="MDEwOlJlcG9zaXRvcnkzOTEzMTMwMjA="
+      category="Announcements"
+      categoryId="DIC_kwDOF1L2fM4B-hVS"
+      mapping="specific"
+      term="Welcome to @giscus/react component!"
+      reactionsEnabled="1"
+      emitMetadata="0"
+      inputPosition="top"
+      theme="light"
+      lang="en"
+      loading="lazy"
+    />
+  );
+}
+```
+
+For the props, first you got to the [giscus website](https://giscus.app/) and copy the `script` tag. Then remove `data-` from the prop names, and write them in `camelCase`.
+
+For more information, you can read the [giscus-component](https://github.com/giscus/giscus-component) page on GitHub.
+
+### 6. Import a giscus component in a page
+
+Now that we've finished all the setup, we only need to import and use the giscus component wherever you want.
+
+For me, I used it in `/pages/posts/[slug].js` because that's where my blog contents live.
+
+<CodeHead name="/pages/posts/[slug].js" lang="jsx" />
+
+```jsx showLineNumbers {7}
+import Comments from "@/components/comments.jsx";
+
+const PostLayout = ({ post }) => {
+  return (
+    <Layout>
+      {/* All the contents here... */}
+      <Comments />
+    </Layout>
+  );
+};
+
+export default PostLayout;
+
+export async function getStaticProps({ params }) {
+  // ...
+}
+
+export async function getStaticPaths() {
+  // ...
+}
+```
+
+I have omitted the unnecessary code, but this is the overview of what my page component looks like.
+
+Now, if you navigate to the page that you set the component, you will see the comment widget successfully shown in the designated place 🎉
+
+## Enjoy interacting with the visitors by using giscus
+
+That is all! Now you have a comment system in your Next.js project, without setting up a server.
+
+I hope you find this article helpful, and please leave a reaction or comment if you wanna test it out in here.

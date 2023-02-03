@@ -8,6 +8,7 @@ import { useLiveReload } from "next-contentlayer/hooks";
 import { NextSeo } from "next-seo";
 import { siteTitle, domain } from "@/utils/seo";
 import Toc from "../../components/blog/toc";
+import Comments from "@/components/layout/giscus";
 
 const PostLayout = ({ post }) => {
   useLiveReload();
@@ -46,11 +47,7 @@ const PostLayout = ({ post }) => {
                   </div>
 
                   <div className={s.comment}>
-                    <p className={s.comment_head}>0 Comment</p>
-                    <div className={s.comment_box}>
-                      <p>Comment section</p>
-                      <div></div>
-                    </div>
+                    <Comments />
                   </div>
                 </article>
               </Container>

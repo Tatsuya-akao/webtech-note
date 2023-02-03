@@ -85,11 +85,15 @@
   }
 
   h2 {
-    margin-top: 2em;
+    margin-top: 3em;
   }
 
   h3 {
-    margin-top: 2em;
+    margin-top: 3em;
+
+    @include sp {
+      margin-top: 2.5em;
+    }
 
     & + p {
       margin-top: 1em;
@@ -97,11 +101,11 @@
   }
 
   h4 {
-    margin-top: 2em;
+    margin-top: 3em;
   }
 
   h5 {
-    margin-top: 2.5em;
+    margin-top: 3em;
   }
 }
 

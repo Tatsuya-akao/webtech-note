@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@giscus/react": "^2.2.6",
     "@next/font": "^13.1.6",
     "@splidejs/react-splide": "^0.7.12",
     "contentlayer": "^0.2.9",
