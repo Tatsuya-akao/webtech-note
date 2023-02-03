@@ -6,7 +6,8 @@ export default function Comments() {
       id="comments"
       repo="Tatsuya-akao/webtech-note"
       repoId="R_kgDOI3MqPA"
-      category="Announcements"
+      category="An
+      nouncements"
       categoryId="DIC_kwDOI3MqPM4CT-NJ"
       mapping="pathname"
       reactionsEnabled="1"
