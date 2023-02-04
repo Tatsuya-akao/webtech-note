@@ -1,17 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:news="http://www.google.com/schemas/sitemap-news/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:mobile="http://www.google.com/schemas/sitemap-mobile/1.0" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
-<url><loc>https://webtech-note.com</loc><lastmod>2023-02-04T05:43:51.528Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://webtech-note.com/about</loc><lastmod>2023-02-04T05:43:51.528Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://webtech-note.com/contact</loc><lastmod>2023-02-04T05:43:51.528Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://webtech-note.com/posts</loc><lastmod>2023-02-04T05:43:51.528Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://webtech-note.com/posts/category/next-js</loc><lastmod>2023-02-04T05:43:51.528Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://webtech-note.com/posts/tag/giscus</loc><lastmod>2023-02-04T05:43:51.528Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://webtech-note.com/posts/tag/comments</loc><lastmod>2023-02-04T05:43:51.528Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://webtech-note.com/posts/tag/contentlayer</loc><lastmod>2023-02-04T05:43:51.528Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://webtech-note.com/posts/tag/mdx</loc><lastmod>2023-02-04T05:43:51.528Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://webtech-note.com/posts/tag/vercel</loc><lastmod>2023-02-04T05:43:51.528Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://webtech-note.com/posts/giscus-comment-system</loc><lastmod>2023-02-04T05:43:51.528Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://webtech-note.com/posts/how-i-built-my-blog</loc><lastmod>2023-02-04T05:43:51.528Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://webtech-note.com/posts/parts</loc><lastmod>2023-02-04T05:43:51.528Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://webtech-note.com/posts/react-errors-when-uploading-to-vercel</loc><lastmod>2023-02-04T05:43:51.528Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://webtech-note.com</loc><lastmod>2023-02-04T06:26:31.445Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://webtech-note.com/about</loc><lastmod>2023-02-04T06:26:31.445Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://webtech-note.com/contact</loc><lastmod>2023-02-04T06:26:31.445Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://webtech-note.com/posts</loc><lastmod>2023-02-04T06:26:31.445Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://webtech-note.com/posts/tag/giscus</loc><lastmod>2023-02-04T06:26:31.445Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://webtech-note.com/posts/tag/comments</loc><lastmod>2023-02-04T06:26:31.445Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://webtech-note.com/posts/tag/contentlayer</loc><lastmod>2023-02-04T06:26:31.445Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://webtech-note.com/posts/tag/mdx</loc><lastmod>2023-02-04T06:26:31.445Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://webtech-note.com/posts/tag/vercel</loc><lastmod>2023-02-04T06:26:31.445Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://webtech-note.com/posts/category/next-js</loc><lastmod>2023-02-04T06:26:31.445Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://webtech-note.com/posts/giscus-comment-system</loc><lastmod>2023-02-04T06:26:31.445Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://webtech-note.com/posts/how-i-built-my-blog</loc><lastmod>2023-02-04T06:26:31.445Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
 </urlset>

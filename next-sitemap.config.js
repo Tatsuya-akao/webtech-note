@@ -1,6 +1,6 @@
 /** @type {import('next-sitemap').IConfig} */
 module.exports = {
-  siteUrl: "https://webtech-note.com",
+  siteUrl: `https://${process.env.NEXT_PUBLIC_SITE_DOMAIN}`,
   generateRobotsTxt: true,
-  // ...other options
+  exclude: ["/posts/parts"],
 };

@@ -15,7 +15,7 @@ const rehypePrettyCodeOptions = {
 
 export const Post = defineDocumentType(() => ({
   name: "Post",
-  filePathPattern: `**/*.mdx`,
+  filePathPattern: `*.mdx`,
   contentType: "mdx",
   fields: {
     title: {
