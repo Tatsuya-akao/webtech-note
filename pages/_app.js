@@ -18,7 +18,7 @@ function MyApp({ Component, pageProps }) {
 
   useEffect(() => {
     const handleRouterChange = (url) => {
-      gtag.detectPageview(url);
+      gtag.pageview(url);
     };
     router.events.on("routeChangeComplete", handleRouterChange);
     return () => {

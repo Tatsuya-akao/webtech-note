@@ -1,7 +1,7 @@
 import Script from "next/script";
 import { GA_TRACKING_ID } from "@/utils/gtag";
 
-export function GaScript() {
+export const GaScript = () => {
   return (
     <>
       {GA_TRACKING_ID && (
@@ -18,7 +18,6 @@ export function GaScript() {
            window.dataLayer = window.dataLayer || [];
            function gtag(){dataLayer.push(arguments);}
            gtag('js', new Date());
- 
            gtag('config', '${GA_TRACKING_ID}');
            `,
             }}
@@ -27,4 +26,4 @@ export function GaScript() {
       )}
     </>
   );
-}
+};
