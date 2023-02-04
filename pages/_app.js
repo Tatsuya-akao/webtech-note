@@ -1,5 +1,5 @@
 import { DefaultSeo } from "next-seo";
-import { pageview } from "@/utils/gtag";
+import { pageView } from "@/utils/gtag";
 import { useRouter } from "next/router";
 import { useEffect } from "react";
 import { GaScript } from "@/components/layout/ga-script";
@@ -18,7 +18,7 @@ function MyApp({ Component, pageProps }) {
 
   useEffect(() => {
     const handleRouterChange = (url) => {
-      pageview(url);
+      pageView(url);
     };
     router.events.on("routeChangeComplete", handleRouterChange);
     return () => {
