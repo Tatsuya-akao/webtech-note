@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://webtech-note.com
+
+# Sitemaps
+Sitemap: https://webtech-note.com/sitemap.xml
