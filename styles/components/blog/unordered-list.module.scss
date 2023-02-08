@@ -17,5 +17,9 @@
       left: calc(0.5em - 4px);
       top: calc(1.75em / 2 - 3px); // line-height = 1.75
     }
+
+    p {
+      margin: 0;
+    }
   }
 }

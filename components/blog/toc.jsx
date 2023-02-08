@@ -10,7 +10,7 @@ export default function Toc() {
       headingSelector: "h2, h3",
       headingsOffset: 100,
       scrollSmoothOffset: -100,
-      scrollSmoothDuration: 200,
+      scrollSmoothDuration: 300,
       hasInnerContainers: true,
     });
 

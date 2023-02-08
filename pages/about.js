@@ -1,6 +1,7 @@
 import Layout from "@/components/layout/layout";
 import Container from "@/components/layout/container";
 import Link from "next/link";
+import LinkCard from "@/components/blog/link-card";
 
 import s from "@/styles/pages/about.module.scss";
 import { NextSeo } from "next-seo";
@@ -121,6 +122,8 @@ const About = () => {
                   <Link href="/posts/how-i-built-my-blog">another post</Link>,
                   so check it out if you are interested.
                 </p>
+
+                <LinkCard postSlug="how-i-built-my-blog" />
               </div>
 
               <div className={s.contact}>

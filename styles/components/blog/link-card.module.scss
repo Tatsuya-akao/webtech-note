@@ -6,9 +6,7 @@
   box-shadow: 0 0 10px rgba(var(--rgb-main-dark-01), 0.2);
   min-height: 116px;
   margin-top: 2rem;
-
-  // reset
-  background: none !important;
+  background: var(--color-white) !important;
 
   @include sp {
     padding: 12px;
@@ -16,7 +14,7 @@
   }
 
   &:hover {
-    background: none !important;
+    background: var(--color-white) !important;
     box-shadow: 0 0 16px rgba(var(--rgb-main), 0.2);
 
     .content .title {

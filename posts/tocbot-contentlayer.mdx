@@ -1,0 +1,415 @@
+---
+title: How to make a Table of Contents using tocbot with Contentlayer
+excerpt: Tocbot is a library that builds an automatic table of contents in your pages. I'll show you how to set up with Contentlayer.
+publishedAt: 2023-02-04T20:00:00
+category: Next.js
+tags:
+  - Table of Contents
+  - tocbot
+  - Contentlayer
+  - MDX
+image: /images/posts/tocbot-contentlayer/thumb.png
+isPublished: true
+isFeatured: false
+---
+
+Table of contents helps the visitors quickly get the summary of the article, and navigate to the sections that they are interested in.
+
+In this article, I'll show you how to create a table of contents using [Tocbot](https://tscanlin.github.io/tocbot/) with Contentlayer and Next.js.
+
+<Box>
+  This tutorial is designed for people who use [Next.js](https://nextjs.org/),
+  [Contentlayer](https://www.contentlayer.dev/), and markdown or MDX in their
+  website.
+</Box>
+
+## What we build
+
+Before we start, I'll show you what kind of a table of contents we are gonna create in this article.
+
+<Box type="success_l">
+  <UnorderedList>
+    <li>You can place it anywhere (in the blog contents, or a sidebar, etc)</li>
+    <li>Smooth scrolling to the anchor point when clicked</li>
+    <li>Offset value is available if you have a sticky header</li>
+    <li>Choose the levels of heading tags you want to show</li>
+    <li>Set an `active` class to highlight the current section on scroll</li>
+  </UnorderedList>
+</Box>
+
+Basically, we are gonna create the same table of contents you see on the sidebar in this page. (If you don't see it, increase your browser width to 1280px or up)
+
+If this is what you wanna build, then let's get started!
+
+## Step 1. Install packages
+
+First, we need to install the following packages.
+
+<CodeHead lang="console" />
+
+```console
+npm install rehype-slug tocbot
+```
+
+These are all we need. I'll explain what these packages will do later on.
+
+## Step 2. Add ids to heading tags using rehype-slug
+
+In order to set anchor links to heading tags, each one must have an `id` attribute with a unique value.
+
+To achieve this, we are gonna use `rehype-slug`.
+
+`rehype-slug` does the following work automatically.
+
+<Box type="success_l">
+  <UnorderedList>
+    <li>Add `id`s to `h1` - `h6` tags using the inner text as a value</li>
+    <li>Make sure each `id` value will be unique</li>
+  </UnorderedList>
+</Box>
+
+### How rehype-slug works
+
+Let me show you how this plugin works. Let's say your mdx file has a content below.
+
+<CodeHead lang="mdx" />
+
+```mdx {showLineNumbers}
+## This is heading 2
+
+### This is heading 3
+
+#### Sample heading
+
+##### Sample heading
+```
+
+When this is rendered in the browser, it looks like this.
+
+<CodeHead lang="html" />
+
+```html {showLineNumbers}
+<h2 id="this-is-heading-2">This is heading 2</h2>
+
+<h3 id="this-is-heading-3">This is heading 3</h3>
+
+<h4 id="sample-heading">Sample heading</h4>
+
+<h5 id="sample-heading-1">Sample heading</h5>
+```
+
+`rehype` looks for heading tags, and adds the `id` attributes with the value of the text content inside.
+
+Also, it generates unique `id` values even when the heading tags have the same text strings. You can see it by looking at two headings with `Sample heading` strings inside. When `rehype-slug` detects the same strings, it adds an additional value to make them unique.
+
+### Set up rehype-slug in contentlayer.config.js
+
+To use the rehype plugin, you need to import it in `contentlayer.config.js`.
+
+<CodeHead name="contentlayer.config.js" lang="js" />
+
+```js showLineNumbers{1, 7}
+import rehypeSlug from "rehype-slug";
+
+export default makeSource({
+  contentDirPath: "posts", // your own setting
+  documentTypes: [Post], // your own setting
+  mdx: {
+    rehypePlugins: [rehypeSlug],
+  },
+});
+```
+
+This is all you need. You simply include `rephype-slug` in the `rehypePlugins` array. If you navigate to your blog page, you will see the headings with `id` attributes.
+
+## Step 3. Create a toc component
+
+Now, let's start building the table of contents using Tocbot. First we create a new file `toc.jsx`, and copy & paste the code below.
+
+<CodeHead name="/components/toc.jsx" lang="jsx" />
+
+```jsx showLineNumbers
+import { useEffect } from "react";
+import tocbot from "tocbot";
+
+export default function Toc() {
+  useEffect(() => {
+    tocbot.init({
+      tocSelector: ".js-toc", // Select the wrapper of toc
+      contentSelector: ".js-toc-content", // Select the warpper of contents
+      headingSelector: "h2, h3", // Choose the heading tags
+      /* Optional 1.
+      Enable these if you have a sticky header and adjust the offset value
+      */
+      // headingsOffset: 100,
+      // scrollSmoothOffset: -100,
+
+      /* Optional 2. 
+      Enable this if 'active' class on scroll won't work properly
+      */
+      // hasInnerContainers: true,
+    });
+
+    return () => tocbot.destroy();
+  }, []);
+
+  return (
+    <div>
+      <span>Table of Contents</span>
+      <div className="js-toc"></div>
+    </div>
+  );
+}
+```
+
+This is the basic setup with minimum options.
+
+I'm gonna break these down and explain individually in the next section.
+
+### 3-1. Initialize tocbot
+
+We initialize tocbot using React `useEffect`.
+
+After the component is rendered, it creates the table of contents. Once it's done, call `destroy` method to remove event listeners.
+
+<CodeHead name="/components/toc.jsx" lang="jsx" />
+
+```jsx showLineNumbers
+useEffect(() => {
+  tocbot.init({
+    tocSelector: ".js-toc", // Select the wrapper of toc
+    contentSelector: ".js-toc-content", // Select the warpper of contents
+    headingSelector: "h2, h3", // Choose the heading tags
+    /* Optional 1.
+    Enable these if you have a sticky header and adjust the offset value
+    */
+    // headingsOffset: 100,
+    // scrollSmoothOffset: -100,
+
+    /* Optional 2. 
+    Enable this if 'active' class on scroll won't work properly
+    */
+    // hasInnerContainers: true,
+  });
+
+  return () => tocbot.destroy();
+}, []);
+```
+
+You can pass some options when initializing the tocbot. These 3 options are essential in order to create a ToC.
+
+<Box type="success_l">
+  <UnorderedList>
+    <li>`tocSelector` - Where to render the table of contents.</li>
+    <li>
+      `contentSelector` - Where to grab the headings to build the table of
+      contents.
+    </li>
+    <li>
+      `headingSelector` - Which headings to grab inside of the contentSelector
+      element.
+    </li>
+  </UnorderedList>
+</Box>
+
+About the optional settings and other options, check out [the official Tocbot page](https://tscanlin.github.io/tocbot/).
+
+### 3-2. Create the Table of Contents template
+
+We need to create a template to show the table of contents.
+
+<CodeHead name="/components/toc.jsx" lang="jsx" />
+
+```jsx showLineNumbers{7,14-19}
+import { useEffect } from "react";
+import tocbot from "tocbot";
+
+export default function Toc() {
+  useEffect(() => {
+    tocbot.init({
+      tocSelector: ".js-toc",
+      contentSelector: ".js-toc-content",
+      headingSelector: "h2, h3",
+    });
+    return () => tocbot.destroy();
+  }, []);
+
+  return (
+    <div>
+      <span>Table of Contents</span>
+      <div className="js-toc"></div>
+    </div>
+  );
+}
+```
+
+First, you need to have the container of the generated table of contents. In this code, the `div` tag with the className of `js-toc` will be the container because we set `tocSelector` value to `js-toc`.
+
+The rest is totally up to you. You can add more tags or some icons if you want.
+
+## Step 4. Add a class to the wrapper of blog content in a single page
+
+We need to tell Tocbot where to grab all headings to make the table of contents. In order to do this, we need to add a few lines to a single page (in my case `/pages/posts/[slug].js`).
+
+If you have a MDX blog with Contentlayer, your `[slug].js` file should look something like this:
+
+<CodeHead name="pages/posts/[slug].js" lang="jsx" />
+
+```jsx showLineNumbers
+import { useMDXComponent } from "next-contentlayer/hooks";
+import { allPosts } from "contentlayer/generated";
+
+const mdxComponents = {
+  // ...
+};
+
+const PostLayout = ({ post }) => {
+  const MDXContent = useMDXComponent(post.body.code);
+
+  return (
+    <>
+      {/* Other contents... */}
+      <MDXContent components={mdxComponents} />
+    </>
+  );
+};
+
+export default PostLayout;
+
+export async function getStaticProps({ params }) {
+  // ...
+}
+
+export async function getStaticPaths() {
+  // ...
+}
+```
+
+`<MDXContent />` is where the MDX content will be rendered. So, we add a `div` tag with `js-toc-content` class and wrap up `<MDXContent />` like this:
+
+<CodeHead name="pages/posts/[slug].js" lang="jsx" />
+
+```jsx showLineNumbers
+return (
+  <>
+    <div className="js-toc-content">
+      <MDXContent components={mdxComponents} />
+    </div>
+  </>
+);
+```
+
+By doing this, Tocbot will look for heading tags inside of `js-toc-content` and generate the table.
+
+## Step 5. Import the toc component into your page
+
+Finally, we are gonna import the toc in your page. There are two ways to do this, depending on where you want to show the table of contents.
+
+### 1. Use the table of contents inside of .mdx files
+
+If you wanna embed the table of contents inside of your `.mdx` files, first you need to add it to `mdxComponents`.
+
+Go to your single page (`[slug].js`), and add the highlighted lines:
+
+<CodeHead name="pages/posts/[slug].js" lang="jsx" />
+
+```jsx showLineNumbers{3,6}
+import { useMDXComponent } from "next-contentlayer/hooks";
+import { allPosts } from "contentlayer/generated";
+import { Toc } from "@/components/toc";
+
+const mdxComponents = {
+  Toc,
+};
+
+const PostLayout = ({ post }) => {
+  const MDXContent = useMDXComponent(post.body.code);
+
+  return (
+    <>
+      {/* Other contents... */}
+      <MDXContent components={mdxComponents} />
+    </>
+  );
+};
+
+export default PostLayout;
+
+export async function getStaticProps({ params }) {
+  // ...
+}
+
+export async function getStaticPaths() {
+  // ...
+}
+```
+
+Now that the `<Toc />` component is ready to be used in `.mdx` files, you can call it like this:
+
+<CodeHead name="/posts/sample.mdx" lang="mdx" />
+
+```mdx showLineNumbers{8}
+---
+title: Sample mdx file
+publishedAt: 2023-02-04T20:00:00
+---
+
+This is a sample content.
+
+<Toc />
+
+This is a sample content...
+```
+
+The cool thing about this method is that you have a control over where to show and whether to show the table of contents on each page.
+
+### 2. Use the table of contents outside of .mdx files
+
+The common case for this is when you want to show the table of contents in a sidebar. In this case, you can simply import and use it in the file that you actually wanna show it just like other components.
+
+In my blog, I show it in the sidebar which is located in `[slug].js` file.
+
+<CodeHead name="/pages/posts/[slug].js" lang="mdx" />
+
+```jsx showLineNumbers{17-19}
+import { useMDXComponent } from "next-contentlayer/hooks";
+import { allPosts } from "contentlayer/generated";
+import { Toc } from "@/components/toc";
+
+const mdxComponents = {
+  // ...
+};
+
+const PostLayout = ({ post }) => {
+  const MDXContent = useMDXComponent(post.body.code);
+
+  return (
+    <>
+      <main>
+        <MDXContent components={mdxComponents} />
+      </main>
+      <aside>
+        <Toc />
+      </aside>
+    </>
+  );
+};
+
+export default PostLayout;
+
+export async function getStaticProps({ params }) {
+  // ...
+}
+
+export async function getStaticPaths() {
+  // ...
+}
+```
+
+This is it! Now you have successfully implemented the table of contents in your website.
+
+## Final thoughts
+
+I originally tried to create the table of contents on my own, but then I realized it would save a lot of time if I used a package. Luckily Tocbot has everything I wanted for my table of contents, so I'm satisfied with this for now.
+
+If you have any questions about this, feel free to send me a message! I'll do my best to help you.

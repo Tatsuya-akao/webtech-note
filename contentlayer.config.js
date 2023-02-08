@@ -76,26 +76,26 @@ export const Post = defineDocumentType(() => ({
       type: "string",
       resolve: (post) => `/posts/${post._raw.flattenedPath}`,
     },
-    headings: {
-      type: "json",
-      resolve: (post) => {
-        // get h2 and h3 only
-        const regXHeader = /\n(?<flag>#{2,3})\s+(?<content>.+)/g;
-        const slugger = new GithubSlugger();
-        const headings = Array.from(post.body.raw.matchAll(regXHeader)).map(
-          ({ groups }) => {
-            const flag = groups?.flag;
-            const content = groups?.content;
-            return {
-              level: flag.length,
-              text: content,
-              slug: content ? slugger.slug(content) : undefined,
-            };
-          }
-        );
-        return headings;
-      },
-    },
+    // headings: {
+    //   type: "json",
+    //   resolve: (post) => {
+    //     // get h2 and h3 only
+    //     const regXHeader = /\n(?<flag>#{2,3})\s+(?<content>.+)/g;
+    //     const slugger = new GithubSlugger();
+    //     const headings = Array.from(post.body.raw.matchAll(regXHeader)).map(
+    //       ({ groups }) => {
+    //         const flag = groups?.flag;
+    //         const content = groups?.content;
+    //         return {
+    //           level: flag.length,
+    //           text: content,
+    //           slug: content ? slugger.slug(content) : undefined,
+    //         };
+    //       }
+    //     );
+    //     return headings;
+    //   },
+    // },
   },
 }));
 
