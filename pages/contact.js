@@ -1,8 +1,7 @@
 import Layout from "@/components/layout/layout";
 import Container from "@/components/layout/container";
-import Image from "next/image";
-import Link from "next/link";
-
+import Router from "next/router";
+import Form from "@/components/layout/form";
 import s from "@/styles/pages/contact.module.scss";
 import { NextSeo } from "next-seo";
 import { siteTitle, domain } from "@/utils/seo";
@@ -12,7 +11,7 @@ const Contact = () => {
     <>
       <NextSeo
         title={`Contact | ${siteTitle}`}
-        description="This page is all about me and about WebTech Note."
+        description="This is a contact page. You can send me messages about WebTech Note, or job offers."
         openGraph={{
           images: [
             {
@@ -44,35 +43,7 @@ const Contact = () => {
                 </a>
                 .
               </p>
-              <form className={s.form}>
-                <div className={s.form_row}>
-                  <label htmlFor="">
-                    Your Name<span>*</span>
-                  </label>
-                  <div className={s.form_control}>
-                    <input type="text" />
-                  </div>
-                </div>
-                <div className={s.form_row}>
-                  <label htmlFor="">
-                    Email<span>*</span>
-                  </label>
-                  <div className={s.form_control}>
-                    <input type="email" />
-                  </div>
-                </div>
-                <div className={s.form_row}>
-                  <label htmlFor="">
-                    Message<span>*</span>
-                  </label>
-                  <div className={s.form_control}>
-                    <textarea name="" id="" cols="30" rows="10"></textarea>
-                  </div>
-                </div>
-                <button className={s.form_btn}>
-                  <span>Send</span>
-                </button>
-              </form>
+              <Form />
             </Container>
           </main>
         </Container>

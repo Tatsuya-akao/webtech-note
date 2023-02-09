@@ -129,6 +129,10 @@ $theme-colors: (
     #28c840,
     #28c840,
   ),
+  error: (
+    #f10000,
+    #f10000,
+  ),
 );
 
 @each $theme in $themes {

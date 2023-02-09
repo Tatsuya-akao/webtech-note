@@ -25,11 +25,11 @@ export default function Footer() {
                   POSTS
                 </Link>
               </li>
-              {/* <li className={s.nav_item}>
+              <li className={s.nav_item}>
                 <Link className={s.nav_link} href="/contact">
                   CONTACT
                 </Link>
-              </li> */}
+              </li>
             </ul>
 
             <ul className={s.sns_list}>

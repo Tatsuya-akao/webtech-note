@@ -86,11 +86,11 @@ export default function Header({ home }) {
                     POSTS
                   </Link>
                 </li>
-                {/* <li className={s.nav_item}>
+                <li className={s.nav_item}>
                   <Link className={s.nav_link} href="/contact">
                     CONTACT
                   </Link>
-                </li> */}
+                </li>
               </ul>
             </nav>
 
@@ -130,11 +130,11 @@ export default function Header({ home }) {
                 POSTS
               </Link>
             </li>
-            {/* <li className={s.menu_item}>
+            <li className={s.menu_item}>
               <Link className={s.menu_link} href="/contact">
                 CONTACT
               </Link>
-            </li> */}
+            </li>
           </ul>
 
           <ul className={s.menu_sns_list}>
