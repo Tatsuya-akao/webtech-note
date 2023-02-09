@@ -6,7 +6,7 @@ export default function Form() {
 
     const res = await fetch("/api/send", {
       body: JSON.stringify({
-        name: event.target.name.value,
+        yourName: event.target.name.value,
         email: event.target.email.value,
         message: event.target.message.value,
       }),
