@@ -25,6 +25,8 @@ export default function Form() {
       method: "POST",
     });
 
+    const result = await res.json();
+
     Router.push("/thanks");
   };
 
@@ -78,7 +80,7 @@ export default function Form() {
           <p className={s.error}>{errors.message?.message}</p>
         </div>
       </div>
-      <button className={s.form_btn}>
+      <button className={s.form_btn} type="submit">
         <span>Send</span>
       </button>
 

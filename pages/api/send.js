@@ -57,7 +57,7 @@ export default function handler(req, res) {
         await sgMail.send(msg);
         await sgMail.send(msgToAdmin);
       } catch (error) {
-        console.log(error);
+        console.error(error);
 
         return res
           .status(error.statusCode || 500)
@@ -66,5 +66,5 @@ export default function handler(req, res) {
     })();
   }
 
-  res.status(200).json({ error: "" });
+  return res.status(200).json({ error: "" });
 }
