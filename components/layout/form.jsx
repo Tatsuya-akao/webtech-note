@@ -25,7 +25,7 @@ export default function Form() {
       method: "POST",
     });
 
-    // Router.push("/thanks");
+    Router.push("/thanks");
   };
 
   const onError = () => {
