@@ -27,7 +27,7 @@ export default function Form() {
 
     const result = await res.json();
 
-    Router.push("/thanks");
+    // Router.push("/thanks");
   };
 
   const onError = () => {
