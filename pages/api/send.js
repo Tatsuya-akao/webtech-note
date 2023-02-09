@@ -57,6 +57,8 @@ export default function handler(req, res) {
         await sgMail.send(msg);
         await sgMail.send(msgToAdmin);
       } catch (error) {
+        console.log(error);
+
         return res
           .status(error.statusCode || 500)
           .json({ error: error.message });
