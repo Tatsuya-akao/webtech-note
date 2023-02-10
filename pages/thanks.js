@@ -12,7 +12,7 @@ export default function ThanksPage() {
             <span>Thank You!</span>
             <span>
               Your message has been <br className={s.sp} />
-              successfully sent.
+              sent successfully.
             </span>
           </h1>
           <p className={s.text}>
