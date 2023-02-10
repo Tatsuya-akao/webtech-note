@@ -1,4 +1,4 @@
-export default function handler(req, res) {
+export default async (req, res) => {
   let response = null;
 
   if (req.method === "POST") {
@@ -69,4 +69,4 @@ export default function handler(req, res) {
 
   res.status(200);
   res.send(response);
-}
+};
