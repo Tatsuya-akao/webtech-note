@@ -52,6 +52,7 @@
   width: 140px;
   height: 48px;
   font-size: rem(18);
+  font-weight: 500;
   color: var(--color-white);
   display: flex;
   align-items: center;
@@ -97,6 +98,8 @@
 
 .submit_message {
   color: var(--color-main);
+  font-weight: 500;
+  font-size: rem(16);
   background-color: rgba(var(--rgb-main), 0.08);
   padding: 1em;
   margin-top: 32px;
