@@ -1,4 +1,6 @@
 export default function handler(req, res) {
+  let response = null;
+
   if (req.method === "POST") {
     const sgMail = require("@sendgrid/mail");
     sgMail.setApiKey(process.env.SENDGRID_API_KEY);
@@ -47,24 +49,24 @@ export default function handler(req, res) {
       <p>Message: ${message}</p>
       <hr />
       <p>I will get back to you within 3 days. Have a good day!</p>
-      <p><strong>Tatsuya | WebTech Note</strong></p>
+      <p>Tatsuya | WebTech Note</p>
       <p>Site URL: <a href="https://webtech-note.com" rel="noopener noreferrer">https://webtech-note.com</a></p>
       `,
     };
 
     (async () => {
       try {
-        await sgMail.send(msg);
-        await sgMail.send(msgToAdmin);
+        response = await sgMail.send(msgToAdmin);
       } catch (error) {
         console.error(error);
 
-        return res
-          .status(error.statusCode || 500)
-          .json({ error: error.message });
+        if (error.response) {
+          console.error(error.response.body);
+        }
       }
     })();
   }
 
-  return res.status(200).json({ error: "" });
+  res.status(200);
+  res.send(response);
 }

@@ -1,3 +1,4 @@
+import Router from "next/router";
 import s from "@/styles/components/layout/form.module.scss";
 
 export default function Form() {
@@ -16,7 +17,7 @@ export default function Form() {
       method: "POST",
     });
 
-    const result = await res.json();
+    if (res.ok) Router.push("/thanks");
   };
 
   return (
