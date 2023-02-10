@@ -25,9 +25,12 @@ export default function Form() {
       method: "POST",
     });
 
-    const result = await res.json();
+    if (res.ok) {
+      console.log(res);
+      Router.push("/thanks");
+    }
 
-    // Router.push("/thanks");
+    // const result = await res.json();
   };
 
   const onError = () => {

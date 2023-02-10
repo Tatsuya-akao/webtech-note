@@ -1,7 +1,7 @@
 import Layout from "@/components/layout/layout";
 import Container from "@/components/layout/container";
 import Router from "next/router";
-import Form from "@/components/layout/form-backup";
+import Form from "@/components/layout/form";
 import s from "@/styles/pages/contact.module.scss";
 import { NextSeo } from "next-seo";
 import { siteTitle, domain } from "@/utils/seo";
