@@ -7,10 +7,8 @@ export default function Form() {
   const {
     register,
     handleSubmit,
-    formState: { errors },
+    formState: { errors, isSubmitting },
   } = useForm();
-
-  const [showErrorMessage, setShowErrorMessage] = useState(false);
 
   const onSubmit = async (data) => {
     const res = await fetch("/api/send", {
@@ -29,12 +27,10 @@ export default function Form() {
       console.log(res);
       Router.push("/thanks");
     }
-
-    // const result = await res.json();
   };
 
-  const onError = () => {
-    setShowErrorMessage(true);
+  const onError = (errors) => {
+    console.log(errors);
   };
 
   return (
@@ -87,9 +83,9 @@ export default function Form() {
         <span>Send</span>
       </button>
 
-      {showErrorMessage && (
-        <div className={s.error_message}>
-          <p>Please fill out all information.</p>
+      {isSubmitting && (
+        <div className={s.submit_message}>
+          <p>Submitting the form...</p>
         </div>
       )}
     </form>
