@@ -7,30 +7,6 @@ export default async (req, res) => {
 
     const { yourName, email, message } = req.body;
 
-    const msg = {
-      to: email,
-      from: process.env.SITE_EMAIL,
-      subject: "Your message has sent to WebTech Note",
-      text: `
-      Thank you for getting in touch. I have received a message with the following information:\r\n
-      Name: ${yourName}\r\n
-      Email: ${email}\r\n
-      Message: ${message}}\r\n
-      I'll get back to you within 3 days. Have a good day!
-      `,
-      html: `
-      <p>Thank you for getting in touch. <br>I have received your message with the following information:</p>
-      <hr />
-      <p>Your name: ${yourName}</p>
-      <p>Email: ${email}</p>
-      <p>Message: ${message}</p>
-      <hr />
-      <p>I will get back to you within 3 days. Have a good day!</p>
-      <p>Tatsuya | WebTech Note</p>
-      <p>Site URL: <a href="https://webtech-note.com" rel="noopener noreferrer">https://webtech-note.com</a></p>
-      `,
-    };
-
     const msgToAdmin = {
       to: process.env.ADMIN_EMAIL,
       from: process.env.SITE_EMAIL,
@@ -54,19 +30,19 @@ export default async (req, res) => {
       `,
     };
 
-    (async () => {
-      try {
-        response = await sgMail.send(msgToAdmin);
-      } catch (error) {
-        console.error(error);
+    try {
+      response = await sgMail.send(msgToAdmin);
 
-        if (error.response) {
-          console.error(error.response.body);
-        }
+      res.status(200);
+      res.send(response);
+    } catch (error) {
+      console.error(error);
+
+      if (error.response) {
+        console.error(error.response.body);
       }
-    })();
-  }
 
-  res.status(200);
-  res.send(response);
+      res.status(500);
+    }
+  }
 };
