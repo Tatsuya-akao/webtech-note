@@ -17,7 +17,10 @@ export default function Form() {
       method: "POST",
     });
 
-    if (res.ok) Router.push("/thanks");
+    if (res.ok) {
+      console.log(res);
+      Router.push("/thanks");
+    }
   };
 
   return (
