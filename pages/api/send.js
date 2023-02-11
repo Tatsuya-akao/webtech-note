@@ -12,13 +12,13 @@ export default async (req, res) => {
       from: process.env.SITE_EMAIL,
       subject: "New contact",
       text: `
-      Thank you for getting in touch. I'll get back to you within 3 days. Have a good day!\r\n
+      A new message sent by ${yourName}\r\n
       Name: ${yourName}\r\n
       Email: ${email}\r\n
       Message: ${message}
       `,
       html: `
-      <p>Thank you for getting in touch. <br>I have received your message with the following information:</p>
+      <p>A new message sent by ${yourName}</p>
       <hr />
       <p>Your name: ${yourName}</p>
       <p>Email: ${email}</p>
