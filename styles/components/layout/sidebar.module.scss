@@ -7,15 +7,13 @@
   flex-grow: 1;
   flex-basis: 280px;
   max-width: 320px;
-  max-height: 100vh;
-  overflow: auto;
+  max-height: calc(100vh - 280px);
   height: 100%;
   padding-bottom: 72px;
   margin-left: 48px;
 
   @include tab {
     position: static;
-    overflow: initial;
     width: 100%;
     max-width: 100%;
     margin-left: 0;

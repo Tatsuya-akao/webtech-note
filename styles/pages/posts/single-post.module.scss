@@ -147,11 +147,10 @@
   top: 120px;
   display: block;
   width: 25%;
-  max-height: 100vh;
+  max-height: calc(100vh - 180px);
   flex-grow: 1;
   overflow: auto;
   height: 100%;
-  padding-bottom: 72px;
   margin-left: 32px;
 
   @include pc {
