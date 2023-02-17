@@ -1,21 +1,33 @@
 $themes: light, dark;
 
 $theme-colors: (
-  text: (
-    #333,
+  dark: (
+    #3f4a54,
     #fff,
+  ),
+  light: (
+    #fff,
+    #0e1e2d,
+  ),
+  text: (
+    #3f4a54,
+    #eef5ff,
   ),
   white: (
     #fff,
-    #121212,
+    #fff,
   ),
   header-bg: (
     #f9fafb,
     #252627,
   ),
+  bg: (
+    #fff,
+    #0f172a,
+  ),
   main-bg: (
     #f8fafc,
-    #181818,
+    #0d1324,
   ),
   border: (
     #e8edf2,
@@ -59,19 +71,19 @@ $theme-colors: (
   ),
   box-default-bg: (
     #e8edf2,
-    #e8edf2,
+    #5b6e7e,
   ),
   box-success-bg: (
     #e0f3ff,
-    #e0f3ff,
+    #336c91,
   ),
   box-warning-bg: (
     #fff4ce,
-    #fff4ce,
+    #d3ae63,
   ),
   editor-bg: (
     #1b242e,
-    #1b242e,
+    #021324,
   ),
   editor-border: (
     #334155,

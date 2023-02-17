@@ -36,10 +36,15 @@
     color: var(--color-text);
     border: 1px solid rgba(var(--rgb-border), 1);
     border-radius: 5px;
-    background-color: var(--color-white);
+    background-color: var(--color-light);
     padding: 0.5em;
     outline: none;
     transition: all 0.3s;
+
+    &:active,
+    &:focus {
+      border-color: var(--color-main);
+    }
 
     @include sp {
       padding: 0.25em;
@@ -77,7 +82,7 @@
 
   &:hover {
     box-shadow: 0 0 12px rgba(var(--rgb-main), 0.2);
-    background-color: var(--color-white);
+    background-color: transparent;
     color: var(--color-main);
   }
 }

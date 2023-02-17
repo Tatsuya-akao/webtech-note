@@ -6,7 +6,7 @@
   left: 0;
   width: 100%;
   z-index: $z-header;
-  background-color: rgba(var(--rgb-header-bg), 0.4);
+  background-color: rgba(var(--rgb-header-bg), 0.8);
   border-bottom: 1px solid rgba(var(--rgb-border), 0.8);
   backdrop-filter: blur(8px) saturate(180%);
 }
@@ -123,6 +123,7 @@
 
 .nav {
   height: 100%;
+  margin-left: auto;
 
   @include sp {
     display: none;

@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import Container from "@/components/layout/container";
+import ThemeToggle from "@/components/layout/theme-toggle";
 import s from "../../styles/components/layout/header.module.scss";
 import { FaGithub, FaTwitter, FaInstagramSquare } from "react-icons/fa";
 import { useState } from "react";
@@ -93,6 +94,8 @@ export default function Header({ home }) {
                 </li>
               </ul>
             </nav>
+
+            <ThemeToggle />
 
             <button
               onClick={toggleHamburgerMenu}

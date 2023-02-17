@@ -1,0 +1,36 @@
+@import "@sass-utils";
+
+.btn {
+  position: relative;
+  width: 32px;
+  height: 32px;
+  border: 1px solid rgba(var(--rgb-border), 1);
+  border-radius: 50%;
+  padding: 4px;
+  cursor: pointer;
+  margin-left: rem(24);
+  overflow: hidden;
+  transition: all 0.3s;
+
+  &:hover {
+    border-color: rgba(var(--rgb-header-link), 0.6);
+  }
+}
+
+.icons {
+  display: flex;
+  justify-content: space-between;
+  width: 56px;
+  padding: 0 3px;
+  transition: all 0.3s;
+
+  svg {
+    color: var(--color-dark);
+  }
+}
+
+.btn.dark {
+  .icons {
+    transform: translateX(-34px);
+  }
+}

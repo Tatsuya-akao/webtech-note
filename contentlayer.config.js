@@ -3,7 +3,6 @@
 import { defineDocumentType, makeSource } from "contentlayer/source-files";
 import rehypePrettyCode from "rehype-pretty-code";
 import rehypeSlug from "rehype-slug";
-import GithubSlugger from "github-slugger";
 
 const rehypePrettyCodeOptions = {
   theme: "slack-dark", // good

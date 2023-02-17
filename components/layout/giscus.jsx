@@ -1,6 +1,15 @@
 import Giscus from "@giscus/react";
+import { useTheme } from "next-themes";
+
+const themeMapping = {
+  light: "light",
+  dark: "dark",
+};
 
 export default function Comments() {
+  const { resolvedTheme } = useTheme();
+  const theme = themeMapping[resolvedTheme];
+
   return (
     <Giscus
       id="comments"
@@ -12,7 +21,7 @@ export default function Comments() {
       reactionsEnabled="1"
       emitMetadata="0"
       inputPosition="bottom"
-      theme="preferred_color_scheme"
+      theme={theme}
       strict="1"
       lang="en"
       loading="lazy"

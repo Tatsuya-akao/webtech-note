@@ -3,6 +3,9 @@ import { pageView } from "@/utils/gtag";
 import { useRouter } from "next/router";
 import { useEffect } from "react";
 import { GaScript } from "@/components/layout/ga-script";
+import { seoProps } from "@/utils/seo";
+import { mukta } from "@/utils/fonts";
+import { ThemeProvider } from "next-themes";
 
 import "@/styles/base/reset.scss";
 import "@/styles/base/mixins.scss";
@@ -10,8 +13,6 @@ import "@/styles/base/colors.scss";
 import "@/styles/base/global.scss";
 import "@/styles/libs/rehype.scss";
 import "@/styles/libs/tocbot.scss";
-import { seoProps } from "@/utils/seo";
-import { mukta } from "@/utils/fonts";
 
 function MyApp({ Component, pageProps }) {
   const router = useRouter();
@@ -31,9 +32,11 @@ function MyApp({ Component, pageProps }) {
       <GaScript />
       <DefaultSeo {...seoProps} />
 
-      <div className={mukta.className}>
-        <Component {...pageProps} />
-      </div>
+      <ThemeProvider>
+        <div className={mukta.className}>
+          <Component {...pageProps} />
+        </div>
+      </ThemeProvider>
     </>
   );
 }

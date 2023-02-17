@@ -8,10 +8,11 @@ body {
   font-weight: 400;
   color: var(--color-text);
   background-color: var(--color-main-bg);
+  transition: all 0.3s;
 }
 
 ::selection {
-  color: var(--color-white);
+  color: var(--color-text);
   background-color: var(--color-main);
 }
 
