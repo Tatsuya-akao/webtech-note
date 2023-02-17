@@ -30,6 +30,7 @@
 
   @include sp {
     padding: 8px 14px;
+    justify-content: flex-start;
   }
 }
 
@@ -244,7 +245,7 @@
   width: 60vw;
   min-width: 240px;
   height: 100%;
-  background-color: rgba(var(--rgb-white), 0.4);
+  background-color: rgba(var(--rgb-light), 0.4);
   backdrop-filter: blur(8px) saturate(180%);
   border-right: 1px solid rgba(var(--rgb-border), 0.8);
   padding: 120px 24px;
