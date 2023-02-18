@@ -1,0 +1,35 @@
+@import "@sass-utils";
+
+.box {
+  margin: rem(40) 0;
+  padding: 24px;
+  border-radius: 10px;
+  background-color: rgba(var(--rgb-border), 0.4);
+
+  @include sp {
+    padding: 16px;
+  }
+
+  & > *:first-child {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+}
+
+.head {
+  display: flex;
+  align-items: center;
+  color: #5586b0;
+}
+
+.icon {
+}
+
+.headline {
+  font-size: rem(16);
+  font-weight: 500;
+  margin-left: 8px;
+}
+
+.content {
+}

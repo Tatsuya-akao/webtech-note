@@ -5,7 +5,7 @@ import s from "@/styles/components/layout/theme-toggle.module.scss";
 
 export default function ThemeToggle() {
   const [mounted, setMounted] = useState(false);
-  const { theme, setTheme } = useTheme();
+  const { resolvedTheme, setTheme } = useTheme();
 
   useEffect(() => {
     setMounted(true);
@@ -15,11 +15,13 @@ export default function ThemeToggle() {
     return null;
   }
 
+  console.log(resolvedTheme);
+
   return (
     <>
       <button
-        onClick={() => setTheme(theme === "light" ? "dark" : "light")}
-        className={`${s.btn} ${theme === "dark" && s.dark}`}
+        onClick={() => setTheme(resolvedTheme === "light" ? "dark" : "light")}
+        className={`${s.btn} ${resolvedTheme === "dark" && s.dark}`}
       >
         <span className={s.icons}>
           <MdLightMode />

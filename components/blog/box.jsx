@@ -15,6 +15,7 @@ export default function Box({ children, type = "normal" }) {
       case "warning": {
         return s.warning;
       }
+
       default:
         return s.normal;
     }
