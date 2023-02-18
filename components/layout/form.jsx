@@ -24,7 +24,6 @@ export default function Form() {
     });
 
     if (res.ok) {
-      console.log(res);
       Router.push("/thanks");
     }
   };

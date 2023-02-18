@@ -14,9 +14,6 @@ export default function ThemeSwitch() {
     return null;
   }
 
-  console.log("theme: ", theme);
-  console.log("resolvedTheme: ", resolvedTheme);
-
   return (
     <div className={s.component}>
       <span className={s.demo}>Live Demo</span>

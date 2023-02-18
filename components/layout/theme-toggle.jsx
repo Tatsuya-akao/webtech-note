@@ -15,8 +15,6 @@ export default function ThemeToggle() {
     return null;
   }
 
-  console.log(resolvedTheme);
-
   return (
     <>
       <button
