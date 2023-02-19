@@ -51,6 +51,9 @@ export const getPostsByTag = (tag) => {
     .filter((post) => post.isPublished)
     .filter((post) => {
       return post.tags.includes(tag);
+    })
+    .sort((a, b) => {
+      return compareDesc(new Date(a.publishedAt), new Date(b.publishedAt));
     });
 };
 

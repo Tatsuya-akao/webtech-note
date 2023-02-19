@@ -43,7 +43,7 @@ export default function PostsPage({ posts }) {
 
 export async function getStaticProps() {
   const posts = allPosts
-    .filter((post) => post.isPublished)
+    .filter((post) => post.isPublished === true)
     .sort((a, b) => {
       return compareDesc(new Date(a.publishedAt), new Date(b.publishedAt));
     });
