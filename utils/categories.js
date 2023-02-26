@@ -25,6 +25,7 @@ export const getAllCategorySlugs = allCategories.map((category) =>
 
 // order the array of categories the way I like
 export const manuallyOrderedCategories = [
+  "CSS",
   "Next.js",
   // "React",
 ];

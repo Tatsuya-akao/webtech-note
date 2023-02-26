@@ -1,0 +1,34 @@
+@import "@sass-utils";
+
+.box {
+  margin: rem(40) 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.title {
+  background-color: var(--color-demo-box-title);
+  color: var(--color-white);
+  font-size: 0.8rem;
+  padding: 0 12px;
+  border-radius: 4px 4px 0 0;
+}
+
+.content {
+  position: relative;
+  padding: 24px 24px;
+  border-radius: 0 10px 10px 10px;
+  border: 1px solid rgba(var(--rgb-border), 0.8);
+  background-color: rgba(var(--rgb-border), 0.2);
+  width: 100%;
+
+  @include sp {
+    padding: 16px 16px;
+  }
+
+  & > *:first-child {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+}
