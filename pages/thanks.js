@@ -30,7 +30,7 @@ export default function ThanksPage() {
           </p>
           <div className={s.btn_wrap}>
             <Link href="/" className={s.btn}>
-              Go back Home
+              Back to TOP
             </Link>
           </div>
         </Container>
