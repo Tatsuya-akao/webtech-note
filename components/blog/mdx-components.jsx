@@ -13,6 +13,7 @@ import Toc from "@/components/blog/toc";
 import LinkCard from "@/components/blog/link-card";
 import GradientText from "@/components/blog/gradient-text";
 import ThemeSwitch from "@/components/blog/one-off/theme-switch";
+import { Circles as FloatingCircles } from "@/components/blog/one-off/floating-parallax-circles/circles";
 
 import headingStyle from "@/styles/components/blog/headings.module.scss";
 import codeStyle from "@/styles/components/blog/code.module.scss";
@@ -29,6 +30,7 @@ const components = {
   Toc,
   ThemeSwitch,
   GradientText,
+  FloatingCircles,
   p: ({ ...props }) => <p {...props} />,
   h2: ({ ...props }) => <h2 className={`${headingStyle.level2}`} {...props} />,
   h3: ({ ...props }) => <h3 className={`${headingStyle.level3}`} {...props} />,

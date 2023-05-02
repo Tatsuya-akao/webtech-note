@@ -1,0 +1,73 @@
+---
+title: How to use Sass/SCSS with CSS Modules in Next.js
+excerpt: Work on this
+publishedAt: 2023-03-02T22:00:00
+category: Next.js
+tags:
+  - CSS Modules
+image: /images/posts/gradient-text.png
+isPublished: true
+isFeatured: false
+---
+
+In this article, I'll show you how to use CSS Modules and Sass in a Next.js app.
+
+By the end of this article, you will know:
+
+- How to use CSS Modules with Sass
+- How to set up Sass aliases
+
+Next.js supports CSS Modules by default.
+
+## npm install --save sass
+
+You need to install `sass` package, and you can start using it right away with zero configurations.
+
+```console
+npm install sass --save-dev
+
+yarn add sass --dev
+```
+
+## Change .css extention to .scss (or .sass)
+
+## apply styles
+
+```jsx
+<p className={styles.font}>test</p>
+
+<p className={`${styles.font} ${styles.fontLarge}`}>test</p>
+
+```
+
+## configure variables
+
+```scss
+$text-color: "#000";
+$main-color: "#eee";
+```
+
+When using it:
+
+```scss
+@use "./variables";
+
+.sample {
+  color: variables.$text-color;
+}
+```
+
+```scss
+@mixin font($size, $color) {
+  font-size: $size;
+  color: $color;
+}
+```
+
+```scss
+@use "./mixins";
+
+.sample {
+  @include mixins.font;
+}
+```

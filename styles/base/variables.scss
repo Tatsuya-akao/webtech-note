@@ -1,0 +1,7 @@
+$theme-color: red;
+$font-size: "18px";
+
+@mixin remCalc($size, $color) {
+  font-size: $size;
+  color: $color;
+}

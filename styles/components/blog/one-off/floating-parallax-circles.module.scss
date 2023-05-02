@@ -1,0 +1,44 @@
+.circles {
+  position: relative;
+  height: 3000px;
+  width: 100%;
+  border: 1px solid;
+}
+
+.circle {
+  display: block;
+  width: 100px;
+  height: 100px;
+  background-image: radial-gradient(at top right, #00a7ff, #497491);
+  border-radius: 50%;
+  position: absolute;
+
+  // &:nth-child(1) {
+  //   top: 5%;
+  //   left: 0;
+  // }
+
+  // &:nth-child(2) {
+  //   top: 10%;
+  //   right: 5%;
+  //   background-image: radial-gradient(at top right, #eb67a9, #c94c56);
+  // }
+
+  // &:nth-child(2) {
+  //   top: 10%;
+  //   right: 5%;
+  //   background-image: radial-gradient(at top right, #eb67a9, #c94c56);
+  // }
+
+  // &:nth-child(3) {
+  //   top: 50%;
+  //   left: 10%;
+  //   background-image: radial-gradient(at top right, #f3941a, #cb6410);
+  // }
+
+  // &:nth-child(4) {
+  //   bottom: 0;
+  //   left: 0;
+  //   background-image: radial-gradient(at top right, #e9e9e9, #c2c2c2);
+  // }
+}
